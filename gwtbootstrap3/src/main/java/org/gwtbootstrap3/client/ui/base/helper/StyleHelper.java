@@ -20,11 +20,13 @@ package org.gwtbootstrap3.client.ui.base.helper;
  * #L%
  */
 
+import elemental2.dom.DomGlobal;
+import org.gwtbootstrap3.client.ui.constants.ButtonType;
 import org.gwtbootstrap3.client.ui.constants.DeviceSize;
 import org.gwtbootstrap3.client.ui.constants.Responsiveness;
 
-import com.google.gwt.dom.client.Style;
-import com.google.gwt.user.client.ui.UIObject;
+import org.gwtproject.dom.client.Style;
+import org.gwtproject.user.client.ui.UIObject;
 
 /**
  * Helper methods regarding CSS styling of UIObjects.
@@ -37,8 +39,8 @@ public final class StyleHelper {
     /**
      * Convenience method for first removing all enum style constants and then adding the single one.
      *
-     * @see #removeEnumStyleNames(com.google.gwt.user.client.ui.UIObject, Class)
-     * @see #addEnumStyleName(com.google.gwt.user.client.ui.UIObject, com.google.gwt.dom.client.Style.HasCssName)
+     * @see #removeEnumStyleNames(org.gwtproject.user.client.ui.UIObject, Class)
+     * @see #addEnumStyleName(org.gwtproject.user.client.ui.UIObject, org.gwtproject.dom.client.Style.HasCssName)
      */
     public static <E extends Style.HasCssName, F extends Enum<? extends Style.HasCssName>> void addUniqueEnumStyleName(final UIObject uiObject,
                                                                                                                        final Class<F> enumClass,
@@ -55,15 +57,22 @@ public final class StyleHelper {
      * @param <E>       Enum type implementing {@link Style.HasCssName}
      */
     public static <E extends Enum<? extends Style.HasCssName>> void removeEnumStyleNames(final UIObject uiObject,
-                                                                                         final Class<E> enumClass) {
+                                                                                         Class<E> enumClass) {
+        for (ButtonType value : ButtonType.values()) {
+            DomGlobal.console.log(" ? " + value.getCssName() + " " + value.name());
+        }
 
-        for (final Enum<? extends Style.HasCssName> constant : enumClass.getEnumConstants()) {
-            final String cssClass = ((Style.HasCssName) constant).getCssName();
 
+        DomGlobal.console.log("removeEnumStyleNames " + uiObject.toString());
+        //DomGlobal.console.log("removeEnumStyleNames 2 " + enumClass == null);
+        //DomGlobal.console.log("removeEnumStyleNames 3 " + enumClass.getCanonicalName());
+        //DomGlobal.console.log("removeEnumStyleNames 4 " + enumClass.getEnumConstants());
+
+/*        for (final String cssClass : styles) {
             if (cssClass != null && !cssClass.isEmpty()) {
                 uiObject.removeStyleName(cssClass);
             }
-        }
+        }*/
     }
 
     /**

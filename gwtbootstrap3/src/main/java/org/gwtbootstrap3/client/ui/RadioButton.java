@@ -36,19 +36,18 @@ import org.gwtbootstrap3.client.ui.constants.IconSize;
 import org.gwtbootstrap3.client.ui.constants.IconType;
 import org.gwtbootstrap3.client.ui.constants.Styles;
 
-import com.google.gwt.core.client.Scheduler;
-import com.google.gwt.core.client.Scheduler.ScheduledCommand;
-import com.google.gwt.dom.client.Document;
-import com.google.gwt.dom.client.InputElement;
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.event.logical.shared.ValueChangeEvent;
-import com.google.gwt.i18n.client.HasDirection.Direction;
-import com.google.gwt.i18n.shared.DirectionEstimator;
-import com.google.gwt.safehtml.shared.SafeHtml;
-import com.google.gwt.uibinder.client.UiConstructor;
-import com.google.gwt.user.client.DOM;
-import com.google.gwt.user.client.Event;
+import org.gwtproject.core.client.Scheduler;
+import org.gwtproject.dom.client.Document;
+import org.gwtproject.dom.client.InputElement;
+import org.gwtproject.event.dom.client.ClickEvent;
+import org.gwtproject.event.dom.client.ClickHandler;
+import org.gwtproject.event.logical.shared.ValueChangeEvent;
+import org.gwtproject.i18n.client.HasDirection;
+import org.gwtproject.i18n.shared.DirectionEstimator;
+import org.gwtproject.safehtml.shared.SafeHtml;
+import org.gwtproject.uibinder.client.UiConstructor;
+import org.gwtproject.user.client.DOM;
+import org.gwtproject.user.client.Event;
 
 /**
  * Button representing a radio button used within a {@link ButtonGroup} that has
@@ -96,7 +95,7 @@ public class RadioButton extends Radio implements HasActive,
      *            direction should be inherited from the widget's parent
      *            element.
      */
-    public RadioButton(String name, SafeHtml label, Direction dir) {
+    public RadioButton(String name, SafeHtml label, HasDirection.Direction dir) {
         this(name);
         setHTML(label, dir);
     }
@@ -149,7 +148,7 @@ public class RadioButton extends Radio implements HasActive,
      *            direction should be inherited from the widget's parent
      *            element.
      */
-    public RadioButton(String name, String label, Direction dir) {
+    public RadioButton(String name, String label, HasDirection.Direction dir) {
         this(name);
         setText(label, dir);
     }
@@ -225,11 +224,11 @@ public class RadioButton extends Radio implements HasActive,
             public void onClick(ClickEvent event) {
                 final boolean oldValue = getValue();
 
-                Scheduler.get().scheduleDeferred(new ScheduledCommand() {
+                Scheduler.get().scheduleDeferred(new Scheduler.ScheduledCommand() {
                     @Override
                     public void execute() {
                         ValueChangeEvent.fireIfNotEqual(RadioButton.this,
-                                oldValue, getValue());
+                                                        oldValue, getValue());
                     }
                 });
             }

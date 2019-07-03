@@ -25,7 +25,7 @@ import org.gwtbootstrap3.client.ui.base.AbstractAnchorListItem;
 /**
  * @author Joshua Godi
  */
-public class AnchorListItem extends AbstractAnchorListItem implements com.google.gwt.user.client.ui.HasText {
+public class AnchorListItem extends AbstractAnchorListItem implements org.gwtproject.user.client.ui.HasText {
 
     public AnchorListItem() {
     }

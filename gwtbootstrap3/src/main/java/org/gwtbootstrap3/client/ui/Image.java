@@ -30,13 +30,13 @@ import org.gwtbootstrap3.client.ui.constants.ImageType;
 import org.gwtbootstrap3.client.ui.constants.Pull;
 import org.gwtbootstrap3.client.ui.constants.Styles;
 
-import com.google.gwt.resources.client.ImageResource;
-import com.google.gwt.safehtml.shared.SafeUri;
+import org.gwtproject.resources.client.ImageResource;
+import org.gwtproject.safehtml.shared.SafeUri;
 
 /**
  * @author Joshua Godi
  */
-public class Image extends com.google.gwt.user.client.ui.Image implements HasType<ImageType>, HasResponsiveness,
+public class Image extends org.gwtproject.user.client.ui.Image implements HasType<ImageType>, HasResponsiveness,
         HasPull {
 
     private final PullMixin<Image> pullMixin = new PullMixin<Image>(this);

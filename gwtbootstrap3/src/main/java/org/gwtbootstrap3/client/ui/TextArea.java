@@ -24,10 +24,10 @@ import org.gwtbootstrap3.client.ui.base.TextBoxBase;
 import org.gwtbootstrap3.client.ui.constants.Styles;
 import org.gwtbootstrap3.client.ui.gwt.Widget;
 
-import com.google.gwt.dom.client.Document;
-import com.google.gwt.dom.client.Element;
-import com.google.gwt.dom.client.TextAreaElement;
-import com.google.gwt.user.client.ui.RootPanel;
+import org.gwtproject.dom.client.Document;
+import org.gwtproject.dom.client.Element;
+import org.gwtproject.dom.client.TextAreaElement;
+import org.gwtproject.user.client.ui.RootPanel;
 
 public class TextArea extends TextBoxBase {
 

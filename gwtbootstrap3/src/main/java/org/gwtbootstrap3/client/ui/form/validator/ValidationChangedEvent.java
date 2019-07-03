@@ -1,9 +1,9 @@
 package org.gwtbootstrap3.client.ui.form.validator;
 
-import com.google.gwt.event.shared.EventHandler;
-import com.google.gwt.event.shared.GwtEvent;
-import com.google.gwt.event.shared.HasHandlers;
-import com.google.web.bindery.event.shared.HandlerRegistration;
+import org.gwtproject.event.legacy.shared.EventHandler;
+import org.gwtproject.event.legacy.shared.GwtEvent;
+import org.gwtproject.event.shared.HandlerRegistration;
+import org.gwtproject.event.shared.HasHandlers;
 
 /*
  * #%L

@@ -33,24 +33,23 @@ import org.gwtbootstrap3.client.ui.constants.Pull;
 import org.gwtbootstrap3.client.ui.gwt.Widget;
 import org.gwtbootstrap3.client.ui.impl.SimpleRadioButtonImpl;
 
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.dom.client.Document;
-import com.google.gwt.dom.client.Element;
-import com.google.gwt.dom.client.InputElement;
-import com.google.gwt.event.dom.client.ChangeEvent;
-import com.google.gwt.event.dom.client.ChangeHandler;
-import com.google.gwt.event.dom.client.HasChangeHandlers;
-import com.google.gwt.event.shared.HandlerRegistration;
-import com.google.gwt.uibinder.client.UiConstructor;
-import com.google.gwt.user.client.ui.RootPanel;
+import org.gwtproject.dom.client.Document;
+import org.gwtproject.dom.client.Element;
+import org.gwtproject.dom.client.InputElement;
+import org.gwtproject.event.dom.client.ChangeEvent;
+import org.gwtproject.event.dom.client.ChangeHandler;
+import org.gwtproject.event.dom.client.HasChangeHandlers;
+import org.gwtproject.event.shared.HandlerRegistration;
+import org.gwtproject.uibinder.client.UiConstructor;
+import org.gwtproject.user.client.ui.RootPanel;
 
 /**
  * A simple radio button widget, with no label.
  */
-public class SimpleRadioButton extends com.google.gwt.user.client.ui.SimpleRadioButton implements HasResponsiveness,
+public class SimpleRadioButton extends org.gwtproject.user.client.ui.SimpleRadioButton implements HasResponsiveness,
         HasId, HasPull, HasFormValue, HasChangeHandlers {
 
-    private static final SimpleRadioButtonImpl impl = GWT.create(SimpleRadioButtonImpl.class);
+    private static final SimpleRadioButtonImpl impl = new SimpleRadioButtonImpl();
 
     /**
      * Creates a SimpleRadioButton widget that wraps an existing &lt;input

@@ -29,7 +29,7 @@ import org.gwtbootstrap3.client.ui.constants.NavbarPosition;
 import org.gwtbootstrap3.client.ui.constants.NavbarType;
 import org.gwtbootstrap3.client.ui.constants.Styles;
 
-import com.google.gwt.dom.client.Document;
+import org.gwtproject.dom.client.Document;
 
 /**
  * @author Sven Jacobs

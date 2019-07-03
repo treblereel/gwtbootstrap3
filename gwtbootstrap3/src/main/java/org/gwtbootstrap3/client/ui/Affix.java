@@ -20,8 +20,8 @@ package org.gwtbootstrap3.client.ui;
  * #L%
  */
 
-import com.google.gwt.dom.client.Element;
-import com.google.gwt.user.client.ui.UIObject;
+import org.gwtproject.dom.client.Element;
+import org.gwtproject.user.client.ui.UIObject;
 
 import jsinterop.annotations.JsMethod;
 

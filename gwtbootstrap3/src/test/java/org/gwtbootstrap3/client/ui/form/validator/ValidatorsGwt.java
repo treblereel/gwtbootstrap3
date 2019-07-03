@@ -31,10 +31,9 @@ import java.util.Map;
 import org.gwtbootstrap3.client.ui.BaseGwt;
 import org.gwtbootstrap3.client.ui.TextBox;
 import org.gwtbootstrap3.client.ui.form.validator.ValidationChangedEvent.ValidationChangedHandler;
-
-import com.google.gwt.core.client.Scheduler;
-import com.google.gwt.editor.client.EditorError;
-import com.google.gwt.user.client.Command;
+import org.gwtproject.core.client.Scheduler;
+import org.gwtproject.editor.client.EditorError;
+import org.gwtproject.user.client.Command;
 
 /**
  * Tests for {@link MessageFormat}.

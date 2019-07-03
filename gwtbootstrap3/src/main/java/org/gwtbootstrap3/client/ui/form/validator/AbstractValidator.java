@@ -24,10 +24,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.gwtbootstrap3.client.ui.form.error.BasicEditorError;
-
-import com.google.gwt.core.shared.GWT;
-import com.google.gwt.editor.client.Editor;
-import com.google.gwt.editor.client.EditorError;
+import org.gwtproject.editor.client.Editor;
+import org.gwtproject.editor.client.EditorError;
 
 /**
  * Common validator code.
@@ -41,7 +39,7 @@ public abstract class AbstractValidator<T> implements Validator<T> {
 
     private String messageKey;
 
-    private ValidatorMessageMixin messageMixin = GWT.create(ValidatorMessageMixin.class);
+    private ValidatorMessageMixin messageMixin;
 
     private Object[] messageValueArgs;
 

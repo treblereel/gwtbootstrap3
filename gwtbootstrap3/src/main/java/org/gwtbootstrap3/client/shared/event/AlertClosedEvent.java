@@ -20,8 +20,8 @@ package org.gwtbootstrap3.client.shared.event;
  * #L%
  */
 
-import com.google.gwt.event.shared.GwtEvent;
-import com.google.gwt.user.client.Event;
+import org.gwtproject.event.legacy.shared.GwtEvent;
+import org.gwtproject.user.client.Event;
 
 /**
  * @author Sven Jacobs

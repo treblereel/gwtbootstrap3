@@ -23,7 +23,7 @@ package org.gwtbootstrap3.client.ui.base.mixin;
 import org.gwtbootstrap3.client.ui.base.HasDataParent;
 import org.gwtbootstrap3.client.ui.constants.Attributes;
 
-import com.google.gwt.user.client.ui.UIObject;
+import org.gwtproject.user.client.ui.UIObject;
 
 /**
  * @author Grant Slender

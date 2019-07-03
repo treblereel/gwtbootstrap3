@@ -33,8 +33,8 @@ import org.gwtbootstrap3.client.ui.constants.Styles;
 import org.gwtbootstrap3.client.ui.constants.Toggle;
 import org.gwtbootstrap3.client.ui.html.Span;
 
-import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.Widget;
+import org.gwtproject.user.client.ui.Composite;
+import org.gwtproject.user.client.ui.Widget;
 
 /**
  * Special button to toggle collapsible area of {@link Navbar}.

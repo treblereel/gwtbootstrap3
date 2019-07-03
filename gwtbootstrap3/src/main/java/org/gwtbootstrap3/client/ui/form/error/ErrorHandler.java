@@ -2,7 +2,7 @@ package org.gwtbootstrap3.client.ui.form.error;
 
 import java.util.List;
 
-import com.google.gwt.editor.client.EditorError;
+import org.gwtproject.editor.client.EditorError;
 
 /*
  * #%L
@@ -26,7 +26,6 @@ import com.google.gwt.editor.client.EditorError;
 
 /**
  * Error handler.
- * 
  * @author Steven Jardine
  */
 public interface ErrorHandler {
@@ -43,9 +42,7 @@ public interface ErrorHandler {
 
     /**
      * Show the errors on the input screen.
-     * 
      * @param errors the errors to display.
      */
     void showErrors(List<EditorError> errors);
-
 }

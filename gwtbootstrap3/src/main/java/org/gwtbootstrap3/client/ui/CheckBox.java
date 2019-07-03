@@ -27,34 +27,33 @@ import org.gwtbootstrap3.client.ui.gwt.FormPanel;
 import org.gwtbootstrap3.client.ui.gwt.Widget;
 import org.gwtbootstrap3.client.ui.impl.CheckBoxImpl;
 
-import com.google.gwt.core.shared.GWT;
-import com.google.gwt.dom.client.Document;
-import com.google.gwt.dom.client.Element;
-import com.google.gwt.dom.client.InputElement;
-import com.google.gwt.dom.client.LabelElement;
-import com.google.gwt.dom.client.SpanElement;
-import com.google.gwt.dom.client.Style.WhiteSpace;
-import com.google.gwt.editor.client.IsEditor;
-import com.google.gwt.editor.client.LeafValueEditor;
-import com.google.gwt.editor.client.adapters.TakesValueEditor;
-import com.google.gwt.event.dom.client.ChangeEvent;
-import com.google.gwt.event.dom.client.ChangeHandler;
-import com.google.gwt.event.dom.client.HasChangeHandlers;
-import com.google.gwt.event.logical.shared.ValueChangeEvent;
-import com.google.gwt.event.logical.shared.ValueChangeHandler;
-import com.google.gwt.event.shared.HandlerRegistration;
-import com.google.gwt.i18n.client.HasDirection.Direction;
-import com.google.gwt.i18n.shared.DirectionEstimator;
-import com.google.gwt.i18n.shared.HasDirectionEstimator;
-import com.google.gwt.safehtml.shared.SafeHtml;
-import com.google.gwt.user.client.DOM;
-import com.google.gwt.user.client.Event;
-import com.google.gwt.user.client.ui.DirectionalTextHelper;
-import com.google.gwt.user.client.ui.HasDirectionalSafeHtml;
-import com.google.gwt.user.client.ui.HasName;
-import com.google.gwt.user.client.ui.HasValue;
-import com.google.gwt.user.client.ui.HasWordWrap;
-import com.google.gwt.user.client.ui.UIObject;
+import org.gwtproject.dom.client.Document;
+import org.gwtproject.dom.client.Element;
+import org.gwtproject.dom.client.InputElement;
+import org.gwtproject.dom.client.LabelElement;
+import org.gwtproject.dom.client.SpanElement;
+import org.gwtproject.dom.client.Style.WhiteSpace;
+import org.gwtproject.editor.client.IsEditor;
+import org.gwtproject.editor.client.LeafValueEditor;
+import org.gwtproject.editor.client.adapters.TakesValueEditor;
+import org.gwtproject.event.dom.client.ChangeEvent;
+import org.gwtproject.event.dom.client.ChangeHandler;
+import org.gwtproject.event.dom.client.HasChangeHandlers;
+import org.gwtproject.event.logical.shared.ValueChangeEvent;
+import org.gwtproject.event.logical.shared.ValueChangeHandler;
+import org.gwtproject.event.shared.HandlerRegistration;
+import org.gwtproject.i18n.client.HasDirection;
+import org.gwtproject.i18n.shared.DirectionEstimator;
+import org.gwtproject.i18n.shared.HasDirectionEstimator;
+import org.gwtproject.safehtml.shared.SafeHtml;
+import org.gwtproject.user.client.DOM;
+import org.gwtproject.user.client.Event;
+import org.gwtproject.user.client.ui.DirectionalTextHelper;
+import org.gwtproject.user.client.ui.HasDirectionalSafeHtml;
+import org.gwtproject.user.client.ui.HasName;
+import org.gwtproject.user.client.ui.HasValue;
+import org.gwtproject.user.client.ui.HasWordWrap;
+import org.gwtproject.user.client.ui.UIObject;
 
 /**
  * A standard check box widget.
@@ -70,9 +69,10 @@ import com.google.gwt.user.client.ui.UIObject;
  * </p>
  */
 public class CheckBox extends ButtonBase implements HasName, HasValue<Boolean>, HasWordWrap, HasDirectionalSafeHtml,
-        HasDirectionEstimator, IsEditor<LeafValueEditor<Boolean>>, HasFormValue, HasChangeHandlers {
+                                                    HasDirectionEstimator,
+                                                    IsEditor<LeafValueEditor<Boolean>>, HasFormValue, HasChangeHandlers {
 
-    private static final CheckBoxImpl impl = GWT.create(CheckBoxImpl.class);
+    private static final CheckBoxImpl impl = new CheckBoxImpl();
 
     protected final SpanElement labelElem = Document.get().createSpanElement();
     protected final InputElement inputElem;
@@ -103,7 +103,7 @@ public class CheckBox extends ButtonBase implements HasName, HasValue<Boolean>, 
      *            direction should be inherited from the widget's parent
      *            element.
      */
-    public CheckBox(SafeHtml label, Direction dir) {
+    public CheckBox(SafeHtml label, HasDirection.Direction dir) {
         this();
         setHTML(label, dir);
     }
@@ -145,7 +145,7 @@ public class CheckBox extends ButtonBase implements HasName, HasValue<Boolean>, 
      *            direction should be inherited from the widget's parent
      *            element.
      */
-    public CheckBox(String label, Direction dir) {
+    public CheckBox(String label, HasDirection.Direction dir) {
         this();
         setText(label, dir);
     }
@@ -270,7 +270,7 @@ public class CheckBox extends ButtonBase implements HasName, HasValue<Boolean>, 
     }
 
     @Override
-    public Direction getTextDirection() {
+    public HasDirection.Direction getTextDirection() {
         return directionalTextHelper.getTextDirection();
     }
 
@@ -368,7 +368,7 @@ public class CheckBox extends ButtonBase implements HasName, HasValue<Boolean>, 
     }
 
     @Override
-    public void setHTML(SafeHtml html, Direction dir) {
+    public void setHTML(SafeHtml html, HasDirection.Direction dir) {
         directionalTextHelper.setTextOrHtml(html.asString(), dir, true);
     }
 
@@ -400,7 +400,7 @@ public class CheckBox extends ButtonBase implements HasName, HasValue<Boolean>, 
     }
 
     @Override
-    public void setText(String text, Direction dir) {
+    public void setText(String text, HasDirection.Direction dir) {
         directionalTextHelper.setTextOrHtml(text, dir, false);
     }
 

@@ -25,14 +25,13 @@ import org.gwtbootstrap3.client.ui.base.HasTargetHistoryToken;
 import org.gwtbootstrap3.client.ui.base.button.AbstractToggleButton;
 import org.gwtbootstrap3.client.ui.constants.ButtonType;
 
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.dom.client.AnchorElement;
-import com.google.gwt.dom.client.Document;
-import com.google.gwt.dom.client.Element;
-import com.google.gwt.user.client.DOM;
-import com.google.gwt.user.client.Event;
-import com.google.gwt.user.client.History;
-import com.google.gwt.user.client.ui.impl.HyperlinkImpl;
+import org.gwtproject.dom.client.AnchorElement;
+import org.gwtproject.dom.client.Document;
+import org.gwtproject.dom.client.Element;
+import org.gwtproject.user.client.DOM;
+import org.gwtproject.user.client.Event;
+import org.gwtproject.user.client.ui.impl.HyperlinkImpl;
+import org.gwtproject.user.history.client.History;
 
 /**
  * Button based on {@code <a>} element.
@@ -45,7 +44,7 @@ public class AnchorButton extends AbstractToggleButton implements HasHref, HasTa
 
     private String targetHistoryToken;
 
-    private static HyperlinkImpl impl = GWT.create(HyperlinkImpl.class);
+    private static HyperlinkImpl impl = new HyperlinkImpl();
 
     public AnchorButton(final ButtonType type) {
         super(type);

@@ -30,9 +30,9 @@ import org.gwtbootstrap3.client.ui.constants.DeviceSize;
 import org.gwtbootstrap3.client.ui.constants.Pull;
 import org.gwtbootstrap3.client.ui.constants.Styles;
 
-import com.google.gwt.dom.client.Element;
+import org.gwtproject.dom.client.Element;
 
-public abstract class FocusWidget extends com.google.gwt.user.client.ui.FocusWidget implements HasResponsiveness,
+public abstract class FocusWidget extends org.gwtproject.user.client.ui.FocusWidget implements HasResponsiveness,
         HasId, HasPull {
 
     private final IdMixin<FocusWidget> idMixin = new IdMixin<FocusWidget>(this);

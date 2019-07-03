@@ -23,21 +23,19 @@ package org.gwtbootstrap3.client.ui;
 import org.gwtbootstrap3.client.ui.constants.Styles;
 import org.gwtbootstrap3.client.ui.impl.RadioImpl;
 
-import com.google.gwt.core.shared.GWT;
-import com.google.gwt.dom.client.Document;
-import com.google.gwt.dom.client.Element;
-import com.google.gwt.dom.client.InputElement;
-import com.google.gwt.dom.client.LabelElement;
-import com.google.gwt.event.logical.shared.ValueChangeEvent;
-import com.google.gwt.i18n.client.HasDirection.Direction;
-import com.google.gwt.i18n.shared.DirectionEstimator;
-import com.google.gwt.safehtml.shared.SafeHtml;
-import com.google.gwt.uibinder.client.UiConstructor;
-import com.google.gwt.user.client.DOM;
+import org.gwtproject.dom.client.Document;
+import org.gwtproject.dom.client.Element;
+import org.gwtproject.dom.client.InputElement;
+import org.gwtproject.dom.client.LabelElement;
+import org.gwtproject.i18n.client.HasDirection;
+import org.gwtproject.i18n.shared.DirectionEstimator;
+import org.gwtproject.safehtml.shared.SafeHtml;
+import org.gwtproject.uibinder.client.UiConstructor;
+import org.gwtproject.user.client.DOM;
 
 /**
  * A mutually-exclusive selection radio button widget. Fires
- * {@link com.google.gwt.event.dom.client.ClickEvent ClickEvents} when the radio
+ * {@link org.gwtproject.event.dom.client.ClickEvent ClickEvents} when the radio
  * button is clicked, and {@link ValueChangeEvent ValueChangeEvents} when the
  * button becomes checked. Note, however, that browser limitations prevent
  * ValueChangeEvents from being sent when the radio button is cleared as a side
@@ -55,7 +53,7 @@ import com.google.gwt.user.client.DOM;
  */
 public class Radio extends CheckBox {
 
-    private static final RadioImpl impl = GWT.create(RadioImpl.class);
+    private static final RadioImpl impl = new RadioImpl();
 
     /**
      * Creates a new radio associated with a particular group, and initialized
@@ -86,7 +84,7 @@ public class Radio extends CheckBox {
      *            direction should be inherited from the widget's parent
      *            element.
      */
-    public Radio(String name, SafeHtml label, Direction dir) {
+    public Radio(String name, SafeHtml label, HasDirection.Direction dir) {
         this(name);
         setHTML(label, dir);
     }
@@ -139,7 +137,7 @@ public class Radio extends CheckBox {
      *            direction should be inherited from the widget's parent
      *            element.
      */
-    public Radio(String name, String label, Direction dir) {
+    public Radio(String name, String label, HasDirection.Direction dir) {
         this(name);
         setText(label, dir);
     }

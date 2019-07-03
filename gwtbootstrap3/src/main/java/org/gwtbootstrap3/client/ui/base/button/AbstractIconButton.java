@@ -32,7 +32,7 @@ import org.gwtbootstrap3.client.ui.constants.IconRotate;
 import org.gwtbootstrap3.client.ui.constants.IconSize;
 import org.gwtbootstrap3.client.ui.constants.IconType;
 
-import com.google.gwt.user.client.ui.HasText;
+import org.gwtproject.user.client.ui.HasText;
 
 /**
  * Base class for buttons that can contain an icon.

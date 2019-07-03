@@ -20,8 +20,13 @@ package org.gwtbootstrap3.client.ui.form.validator;
  * #L%
  */
 
-import com.google.gwt.i18n.client.ConstantsWithLookup;
-import com.google.gwt.i18n.client.LocalizableResource.DefaultLocale;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+import org.gwtproject.i18n.client.ConstantsWithLookup;
+import org.gwtproject.i18n.client.LocalizableResource;
 
 /**
  * Validation messages.
@@ -31,7 +36,7 @@ import com.google.gwt.i18n.client.LocalizableResource.DefaultLocale;
  * 
  * @author Steven Jardine
  */
-@DefaultLocale("en")
+@LocalizableResource.DefaultLocale("en")
 public interface ValidationMessages extends ConstantsWithLookup {
 
     public static class Keys {
@@ -52,6 +57,12 @@ public interface ValidationMessages extends ConstantsWithLookup {
 
         public static final String SIZE = "org.gwtbootstrap3.validation.Size.message";
 
+    }
+
+    @Retention(RetentionPolicy.RUNTIME)
+    @Target(ElementType.METHOD)
+    public @interface Key {
+        String value();
     }
 
     /**

@@ -20,7 +20,7 @@ package org.gwtbootstrap3.client.ui.base;
  * #L%
  */
 
-import com.google.gwt.dom.client.Document;
+import org.gwtproject.dom.client.Document;
 
 /**
  * Base class for {@link org.gwtbootstrap3.client.ui.InputGroupAddon}

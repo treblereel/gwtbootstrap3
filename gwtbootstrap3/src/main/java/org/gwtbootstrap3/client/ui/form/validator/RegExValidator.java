@@ -22,7 +22,7 @@ package org.gwtbootstrap3.client.ui.form.validator;
 
 import org.gwtbootstrap3.client.ui.form.validator.ValidationMessages.Keys;
 
-import com.google.gwt.regexp.shared.RegExp;
+import org.gwtproject.regexp.shared.RegExp;
 
 /**
  * Validator for checking value matches a regular expression.

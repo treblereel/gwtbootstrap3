@@ -20,14 +20,18 @@ package org.gwtbootstrap3.client.ui.constants;
  * #L%
  */
 
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.ListIterator;
+
 import org.gwtbootstrap3.client.ui.base.helper.EnumHelper;
 
-import com.google.gwt.dom.client.Style;
+import org.gwtproject.dom.client.Style;
 
 /**
  * @author Sven Jacobs
  */
-public enum ButtonType implements Type, Style.HasCssName {
+public enum ButtonType implements Type, Style.HasCssName, Iterable {
     DEFAULT("btn-default"),
     PRIMARY("btn-primary"),
     SUCCESS("btn-success"),
@@ -50,4 +54,8 @@ public enum ButtonType implements Type, Style.HasCssName {
     public static ButtonType fromStyleName(final String styleName) {
         return EnumHelper.fromStyleName(styleName, ButtonType.class, DEFAULT);
     }
-}
+
+    @Override
+    public Iterator iterator() {
+        return Arrays.asList(ButtonType.values()).iterator();
+    }}

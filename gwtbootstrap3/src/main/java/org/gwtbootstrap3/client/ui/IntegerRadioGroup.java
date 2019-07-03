@@ -21,9 +21,8 @@ package org.gwtbootstrap3.client.ui;
  */
 
 import org.gwtbootstrap3.client.ui.base.RadioGroupBase;
-
-import com.google.gwt.text.client.IntegerParser;
-import com.google.gwt.uibinder.client.UiConstructor;
+import org.gwtproject.text.client.IntegerParser;
+import org.gwtproject.uibinder.client.UiConstructor;
 
 /**
  * A radio group that returns a integer value.

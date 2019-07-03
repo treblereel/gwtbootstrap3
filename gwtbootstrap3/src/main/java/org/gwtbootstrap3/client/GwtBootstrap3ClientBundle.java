@@ -20,17 +20,18 @@ package org.gwtbootstrap3.client;
  * #L%
  */
 
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.resources.client.ClientBundle;
-import com.google.gwt.resources.client.TextResource;
+
+import org.gwtproject.resources.client.ClientBundle;
+import org.gwtproject.resources.client.Resource;
+import org.gwtproject.resources.client.TextResource;
 
 /**
  * @author Sven Jacobs
  */
+@Resource
 public interface GwtBootstrap3ClientBundle extends ClientBundle {
 
-    static final GwtBootstrap3ClientBundle INSTANCE = GWT.create(GwtBootstrap3ClientBundle.class);
-
+    GwtBootstrap3ClientBundle INSTANCE = new GwtBootstrap3ClientBundleImpl();
     @Source("resource/js/gwtbootstrap3.js")
     TextResource gwtBootstrap3();
 

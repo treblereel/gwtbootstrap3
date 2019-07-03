@@ -28,7 +28,7 @@ import org.gwtbootstrap3.client.ui.constants.Alignment;
 import org.gwtbootstrap3.client.ui.constants.Emphasis;
 import org.gwtbootstrap3.client.ui.gwt.HTMLPanel;
 
-import com.google.gwt.dom.client.ParagraphElement;
+import org.gwtproject.dom.client.ParagraphElement;
 
 /**
  * @author Sven Jacobs

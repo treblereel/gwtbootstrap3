@@ -36,16 +36,17 @@ import org.gwtbootstrap3.client.ui.form.validator.HasValidators;
 import org.gwtbootstrap3.client.ui.form.validator.ValidationChangedEvent.ValidationChangedHandler;
 import org.gwtbootstrap3.client.ui.form.validator.Validator;
 
-import com.google.gwt.dom.client.Element;
-import com.google.gwt.editor.client.EditorError;
-import com.google.gwt.editor.client.HasEditorErrors;
-import com.google.gwt.text.shared.Parser;
-import com.google.gwt.text.shared.Renderer;
-import com.google.web.bindery.event.shared.HandlerRegistration;
+import org.gwtproject.dom.client.Element;
+import org.gwtproject.editor.client.EditorError;
+import org.gwtproject.editor.client.HasEditorErrors;
+import org.gwtproject.event.shared.HandlerRegistration;
+import org.gwtproject.text.shared.Parser;
+import org.gwtproject.text.shared.Renderer;
 
-public class ValueBoxBase<T> extends com.google.gwt.user.client.ui.ValueBoxBase<T> implements HasId, HasReadOnly,
-        HasResponsiveness, HasPlaceholder, HasAutoComplete, HasSize<InputSize>, HasEditorErrors<T>,
-        HasErrorHandler, HasValidators<T>, HasBlankValidator<T> {
+public class ValueBoxBase<T> extends org.gwtproject.user.client.ui.ValueBoxBase<T> implements HasId, HasReadOnly,
+                                                                                              HasResponsiveness, HasPlaceholder, HasAutoComplete, HasSize<InputSize>,
+                                                                                              HasEditorErrors<T>,
+                                                                                              HasErrorHandler, HasValidators<T>, HasBlankValidator<T> {
 
     private static final String MAX_LENGTH = "maxlength";
 

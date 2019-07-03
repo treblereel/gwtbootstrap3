@@ -22,7 +22,7 @@ package org.gwtbootstrap3.client.ui;
 
 import org.gwtbootstrap3.client.ui.base.AbstractTextWidget;
 
-import com.google.gwt.dom.client.Document;
+import org.gwtproject.dom.client.Document;
 
 /**
  * Legend to be used within {@link Form}

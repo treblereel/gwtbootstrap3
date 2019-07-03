@@ -22,12 +22,12 @@ package org.gwtbootstrap3.client.ui;
 
 import org.gwtbootstrap3.client.ui.constants.Styles;
 
-import com.google.gwt.dom.client.Document;
-import com.google.gwt.i18n.client.HasDirection.Direction;
-import com.google.gwt.i18n.shared.DirectionEstimator;
-import com.google.gwt.safehtml.shared.SafeHtml;
-import com.google.gwt.uibinder.client.UiConstructor;
-import com.google.gwt.user.client.DOM;
+import org.gwtproject.dom.client.Document;
+import org.gwtproject.i18n.client.HasDirection;
+import org.gwtproject.i18n.shared.DirectionEstimator;
+import org.gwtproject.safehtml.shared.SafeHtml;
+import org.gwtproject.uibinder.client.UiConstructor;
+import org.gwtproject.user.client.DOM;
 
 /**
  * An inline radio button widget.
@@ -66,7 +66,7 @@ public class InlineRadio extends Radio {
      *            direction should be inherited from the widget's parent
      *            element.
      */
-    public InlineRadio(String name, SafeHtml label, Direction dir) {
+    public InlineRadio(String name, SafeHtml label, HasDirection.Direction dir) {
         this(name);
         setHTML(label, dir);
     }
@@ -119,7 +119,7 @@ public class InlineRadio extends Radio {
      *            direction should be inherited from the widget's parent
      *            element.
      */
-    public InlineRadio(String name, String label, Direction dir) {
+    public InlineRadio(String name, String label, HasDirection.Direction dir) {
         this(name);
         setText(label, dir);
     }

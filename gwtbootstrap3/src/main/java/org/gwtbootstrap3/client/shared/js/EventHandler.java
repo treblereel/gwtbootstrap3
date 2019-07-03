@@ -20,10 +20,8 @@ package org.gwtbootstrap3.client.shared.js;
  * #L%
  */
 
-import com.google.gwt.user.client.Event;
-
 import jsinterop.annotations.JsFunction;
-
+import org.gwtproject.user.client.Event;
 /**
  * EventHandler helper functional interface to trigger
  * Java event functions inside JavaScript

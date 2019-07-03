@@ -26,10 +26,9 @@ import org.gwtbootstrap3.client.ui.form.error.DefaultErrorHandler;
 import org.gwtbootstrap3.client.ui.form.error.ErrorHandler;
 import org.gwtbootstrap3.client.ui.form.error.ErrorHandlerType;
 import org.gwtbootstrap3.client.ui.form.error.HasErrorHandler;
-
-import com.google.gwt.editor.client.EditorError;
-import com.google.gwt.editor.client.HasEditorErrors;
-import com.google.gwt.user.client.ui.Widget;
+import org.gwtproject.editor.client.EditorError;
+import org.gwtproject.editor.client.HasEditorErrors;
+import org.gwtproject.user.client.ui.Widget;
 
 /**
  * Mixin to handle error handler support.

@@ -24,13 +24,13 @@ import org.gwtbootstrap3.client.ui.constants.ButtonSize;
 import org.gwtbootstrap3.client.ui.constants.ButtonType;
 import org.gwtbootstrap3.client.ui.constants.IconType;
 import org.gwtbootstrap3.client.ui.constants.Styles;
+import org.gwtproject.cell.client.Cell;
+import org.gwtproject.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtmlBuilder;
+import org.gwtproject.text.shared.SimpleSafeHtmlRenderer;
+import org.gwtproject.user.client.ui.HasEnabled;
 
-import com.google.gwt.safehtml.shared.SafeHtml;
-import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
-import com.google.gwt.text.shared.SimpleSafeHtmlRenderer;
-import com.google.gwt.user.client.ui.HasEnabled;
-
-public class ButtonCell extends com.google.gwt.cell.client.ButtonCell implements HasEnabled {
+public class ButtonCell extends org.gwtproject.cell.client.ButtonCell implements HasEnabled {
 
     private IconType icon;
 
@@ -95,7 +95,7 @@ public class ButtonCell extends com.google.gwt.cell.client.ButtonCell implements
     }
 
     @Override
-    public void render(com.google.gwt.cell.client.Cell.Context context, SafeHtml data, SafeHtmlBuilder sb) {
+    public void render(Cell.Context context, SafeHtml data, SafeHtmlBuilder sb) {
         String cssClasses = new StringBuilder("btn") //
                 .append(" ") //
                 .append(type.getCssName()) //

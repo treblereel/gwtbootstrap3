@@ -20,16 +20,16 @@ package org.gwtbootstrap3.client.ui;
  * #L%
  */
 
+import com.google.gwt.junit.client.GWTTestCase;
 import org.gwtbootstrap3.client.ui.base.HasActive;
 import org.gwtbootstrap3.client.ui.base.HasFormValue;
 import org.gwtbootstrap3.client.ui.constants.Styles;
 
-import com.google.gwt.dom.client.Element;
-import com.google.gwt.junit.client.GWTTestCase;
-import com.google.gwt.user.client.ui.HasEnabled;
-import com.google.gwt.user.client.ui.HasName;
-import com.google.gwt.user.client.ui.HasValue;
-import com.google.gwt.user.client.ui.UIObject;
+import org.gwtproject.dom.client.Element;
+import org.gwtproject.user.client.ui.HasEnabled;
+import org.gwtproject.user.client.ui.HasName;
+import org.gwtproject.user.client.ui.HasValue;
+import org.gwtproject.user.client.ui.UIObject;
 
 public abstract class BaseGwt extends GWTTestCase {
 
@@ -37,7 +37,7 @@ public abstract class BaseGwt extends GWTTestCase {
      * Specifies a module to use when running this test case. The returned
      * module must include the source for this class.
      *
-     * @see com.google.gwt.junit.client.GWTTestCase#getModuleName()
+     * com.google.gwt.junit.client.GWTTestCase#getModuleName()
      */
     @Override
     public String getModuleName() {

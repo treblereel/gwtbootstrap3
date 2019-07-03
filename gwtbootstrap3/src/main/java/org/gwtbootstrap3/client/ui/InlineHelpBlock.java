@@ -20,9 +20,9 @@ package org.gwtbootstrap3.client.ui;
  * #L%
  */
 
-import com.google.gwt.dom.client.Style;
-import com.google.gwt.dom.client.Style.Display;
-import com.google.gwt.dom.client.Style.Unit;
+import org.gwtproject.dom.client.Style;
+import org.gwtproject.dom.client.Style.Display;
+import org.gwtproject.dom.client.Style.Unit;
 
 /**
  * Display's a help block inline.

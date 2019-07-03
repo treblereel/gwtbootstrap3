@@ -22,7 +22,7 @@ package org.gwtbootstrap3.client.ui.base.mixin;
 
 import org.gwtbootstrap3.client.ui.base.HasId;
 
-import com.google.gwt.user.client.ui.UIObject;
+import org.gwtproject.user.client.ui.UIObject;
 
 /**
  * @author Sven Jacobs

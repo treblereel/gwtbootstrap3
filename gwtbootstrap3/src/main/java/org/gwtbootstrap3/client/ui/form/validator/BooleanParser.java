@@ -22,7 +22,7 @@ package org.gwtbootstrap3.client.ui.form.validator;
 
 import java.text.ParseException;
 
-import com.google.gwt.text.shared.Parser;
+import org.gwtproject.text.shared.Parser;
 
 /**
  * Parses boolean values from a {@link CharSequence}.

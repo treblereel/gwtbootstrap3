@@ -22,7 +22,7 @@ package org.gwtbootstrap3.client.ui.html;
 
 import org.gwtbootstrap3.client.ui.base.ComplexWidget;
 
-import com.google.gwt.dom.client.Document;
+import org.gwtproject.dom.client.Document;
 
 /**
  * @author Joshua Godi

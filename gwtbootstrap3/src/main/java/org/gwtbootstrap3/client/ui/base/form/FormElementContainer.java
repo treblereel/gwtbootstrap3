@@ -25,18 +25,18 @@ import org.gwtbootstrap3.client.ui.base.helper.StyleHelper;
 import org.gwtbootstrap3.client.ui.constants.DeviceSize;
 import org.gwtbootstrap3.client.ui.constants.Styles;
 
-import com.google.gwt.dom.client.Element;
-import com.google.gwt.user.client.ui.ComplexPanel;
-import com.google.gwt.user.client.ui.FileUpload;
-import com.google.gwt.user.client.ui.ListBox;
-import com.google.gwt.user.client.ui.Widget;
+import org.gwtproject.dom.client.Element;
+import org.gwtproject.user.client.ui.ComplexPanel;
+import org.gwtproject.user.client.ui.FileUpload;
+import org.gwtproject.user.client.ui.ListBox;
+import org.gwtproject.user.client.ui.Widget;
 
 /**
  * Base class for {@link org.gwtbootstrap3.client.ui.Form} related
  * widgets that may contain form input elements.
  * <p/>
  * Input elements styleName is adjusted during
- * {@link #add(com.google.gwt.user.client.ui.Widget)}.
+ * {@link #add(org.gwtproject.user.client.ui.Widget)}.
  *
  * @author Sven Jacobs
  * @author Joshua Godi

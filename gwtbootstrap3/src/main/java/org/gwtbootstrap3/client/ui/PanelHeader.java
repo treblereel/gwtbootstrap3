@@ -33,9 +33,9 @@ import org.gwtbootstrap3.client.ui.constants.Toggle;
 import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Text;
 
-import com.google.gwt.user.client.ui.HasText;
-import com.google.gwt.user.client.ui.HasWidgets;
-import com.google.gwt.user.client.ui.Widget;
+import org.gwtproject.user.client.ui.HasText;
+import org.gwtproject.user.client.ui.HasWidgets;
+import org.gwtproject.user.client.ui.Widget;
 
 /**
  * @author Joshua Godi

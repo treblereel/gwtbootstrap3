@@ -23,8 +23,8 @@ package org.gwtbootstrap3.client.ui;
 import org.gwtbootstrap3.client.ui.base.AbstractInputGroupAddon;
 import org.gwtbootstrap3.client.ui.constants.Styles;
 
-import com.google.gwt.dom.client.Element;
-import com.google.gwt.user.client.ui.Widget;
+import org.gwtproject.dom.client.Element;
+import org.gwtproject.user.client.ui.Widget;
 
 /**
  * Prepends or appends buttons to input fields.

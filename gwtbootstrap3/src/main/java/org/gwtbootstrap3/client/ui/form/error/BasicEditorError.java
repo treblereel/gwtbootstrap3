@@ -20,8 +20,8 @@ package org.gwtbootstrap3.client.ui.form.error;
  * #L%
  */
 
-import com.google.gwt.editor.client.Editor;
-import com.google.gwt.editor.client.EditorError;
+import org.gwtproject.editor.client.Editor;
+import org.gwtproject.editor.client.EditorError;
 
 /**
  * Basic {@link EditorError} implementation.

@@ -27,7 +27,7 @@ import org.gwtbootstrap3.client.ui.constants.ListGroupItemType;
 import org.gwtbootstrap3.client.ui.constants.Styles;
 import org.gwtbootstrap3.client.ui.html.Span;
 
-import com.google.gwt.dom.client.Document;
+import org.gwtproject.dom.client.Document;
 
 /**
  * @author Joshua Godi

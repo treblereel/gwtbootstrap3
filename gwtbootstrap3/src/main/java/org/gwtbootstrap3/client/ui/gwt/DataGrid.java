@@ -25,15 +25,15 @@ import org.gwtbootstrap3.client.ui.base.helper.StyleHelper;
 import org.gwtbootstrap3.client.ui.constants.DeviceSize;
 import org.gwtbootstrap3.client.ui.constants.TableType;
 
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.resources.client.ImageResource;
-import com.google.gwt.user.client.ui.Widget;
-import com.google.gwt.view.client.ProvidesKey;
+import org.gwtproject.resources.client.ImageResource;
+import org.gwtproject.user.cellview.client.DataGrid_ResourcesImpl;
+import org.gwtproject.user.client.ui.Widget;
+import org.gwtproject.view.client.ProvidesKey;
 
 /**
  * @author Joshua Godi
  */
-public class DataGrid<T> extends com.google.gwt.user.cellview.client.DataGrid<T> implements HasResponsiveness {
+public class DataGrid<T> extends org.gwtproject.user.cellview.client.DataGrid<T> implements HasResponsiveness {
     private static final int DEFAULT_PAGESIZE = 50;
     private static Resources DEFAULT_RESOURCES;
 
@@ -107,7 +107,7 @@ public class DataGrid<T> extends com.google.gwt.user.cellview.client.DataGrid<T>
 
     private static DataGrid.Resources getDefaultResources() {
         if (DEFAULT_RESOURCES == null) {
-            final DataGrid.Resources dataGridResources = GWT.create(Resources.class);
+            final DataGrid.Resources dataGridResources = new DataGrid_ResourcesImpl();
             DEFAULT_RESOURCES = new ResourcesAdapter(dataGridResources);
         }
         return DEFAULT_RESOURCES;

@@ -36,16 +36,16 @@ import org.gwtbootstrap3.client.ui.constants.IconSize;
 import org.gwtbootstrap3.client.ui.constants.IconType;
 import org.gwtbootstrap3.client.ui.constants.Styles;
 
-import com.google.gwt.dom.client.Document;
-import com.google.gwt.dom.client.InputElement;
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.event.logical.shared.ValueChangeEvent;
-import com.google.gwt.i18n.client.HasDirection.Direction;
-import com.google.gwt.i18n.shared.DirectionEstimator;
-import com.google.gwt.safehtml.shared.SafeHtml;
-import com.google.gwt.user.client.DOM;
-import com.google.gwt.user.client.Event;
+import org.gwtproject.dom.client.Document;
+import org.gwtproject.dom.client.InputElement;
+import org.gwtproject.event.dom.client.ClickEvent;
+import org.gwtproject.event.dom.client.ClickHandler;
+import org.gwtproject.event.logical.shared.ValueChangeEvent;
+import org.gwtproject.i18n.client.HasDirection;
+import org.gwtproject.i18n.shared.DirectionEstimator;
+import org.gwtproject.safehtml.shared.SafeHtml;
+import org.gwtproject.user.client.DOM;
+import org.gwtproject.user.client.Event;
 
 /**
  * Button representing a checkbox used within a {@link ButtonGroup} that has
@@ -83,7 +83,7 @@ public class CheckBoxButton extends CheckBox implements HasActive,
      *            direction should be inherited from the widget's parent
      *            element.
      */
-    public CheckBoxButton(SafeHtml label, Direction dir) {
+    public CheckBoxButton(SafeHtml label, HasDirection.Direction dir) {
         this();
         setHTML(label, dir);
     }
@@ -125,7 +125,7 @@ public class CheckBoxButton extends CheckBox implements HasActive,
      *            direction should be inherited from the widget's parent
      *            element.
      */
-    public CheckBoxButton(String label, Direction dir) {
+    public CheckBoxButton(String label, HasDirection.Direction dir) {
         this();
         setText(label, dir);
     }

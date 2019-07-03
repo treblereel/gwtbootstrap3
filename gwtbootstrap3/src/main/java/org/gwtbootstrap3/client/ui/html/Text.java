@@ -20,10 +20,10 @@ package org.gwtbootstrap3.client.ui.html;
  * #L%
  */
 
-import com.google.gwt.dom.client.Document;
-import com.google.gwt.dom.client.Element;
-import com.google.gwt.user.client.ui.HasText;
-import com.google.gwt.user.client.ui.Widget;
+import org.gwtproject.dom.client.Document;
+import org.gwtproject.dom.client.Element;
+import org.gwtproject.user.client.ui.HasText;
+import org.gwtproject.user.client.ui.Widget;
 
 /**
  * Simple text node.
@@ -42,7 +42,7 @@ import com.google.gwt.user.client.ui.Widget;
  */
 public class Text extends Widget implements HasText {
 
-    private final com.google.gwt.dom.client.Text text;
+    private final org.gwtproject.dom.client.Text text;
 
     /**
      * Creates the default text node with empty text

@@ -21,12 +21,11 @@ package org.gwtbootstrap3.client.ui;
  */
 
 import org.gwtbootstrap3.client.ui.constants.Styles;
-
-import com.google.gwt.dom.client.Document;
-import com.google.gwt.i18n.client.HasDirection.Direction;
-import com.google.gwt.i18n.shared.DirectionEstimator;
-import com.google.gwt.safehtml.shared.SafeHtml;
-import com.google.gwt.user.client.DOM;
+import org.gwtproject.dom.client.Document;
+import org.gwtproject.i18n.client.HasDirection;
+import org.gwtproject.i18n.shared.DirectionEstimator;
+import org.gwtproject.safehtml.shared.SafeHtml;
+import org.gwtproject.user.client.DOM;
 
 /**
  * An inline check box widget.
@@ -56,7 +55,7 @@ public class InlineCheckBox extends CheckBox {
      *            direction should be inherited from the widget's parent
      *            element.
      */
-    public InlineCheckBox(SafeHtml label, Direction dir) {
+    public InlineCheckBox(SafeHtml label, HasDirection.Direction dir) {
         this();
         setHTML(label, dir);
     }
@@ -98,7 +97,7 @@ public class InlineCheckBox extends CheckBox {
      *            direction should be inherited from the widget's parent
      *            element.
      */
-    public InlineCheckBox(String label, Direction dir) {
+    public InlineCheckBox(String label, HasDirection.Direction dir) {
         this();
         setText(label, dir);
     }

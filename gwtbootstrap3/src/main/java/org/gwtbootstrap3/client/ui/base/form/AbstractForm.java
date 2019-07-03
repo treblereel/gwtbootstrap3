@@ -6,29 +6,27 @@ import java.util.List;
 import org.gwtbootstrap3.client.ui.constants.Attributes;
 import org.gwtbootstrap3.client.ui.form.validator.HasValidators;
 
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.core.client.Scheduler;
-import com.google.gwt.core.client.Scheduler.ScheduledCommand;
-import com.google.gwt.dom.client.Document;
-import com.google.gwt.dom.client.Element;
-import com.google.gwt.dom.client.FormElement;
-import com.google.gwt.event.dom.client.KeyCodes;
-import com.google.gwt.event.dom.client.KeyPressEvent;
-import com.google.gwt.event.dom.client.KeyPressHandler;
-import com.google.gwt.event.shared.EventHandler;
-import com.google.gwt.event.shared.GwtEvent;
-import com.google.gwt.event.shared.HandlerRegistration;
-import com.google.gwt.safehtml.client.SafeHtmlTemplates;
-import com.google.gwt.safehtml.shared.SafeHtml;
-import com.google.gwt.safehtml.shared.SafeUri;
-import com.google.gwt.user.client.Event;
-import com.google.gwt.user.client.ui.HasOneWidget;
-import com.google.gwt.user.client.ui.HasWidgets;
-import com.google.gwt.user.client.ui.NamedFrame;
-import com.google.gwt.user.client.ui.RootPanel;
-import com.google.gwt.user.client.ui.Widget;
-import com.google.gwt.user.client.ui.impl.FormPanelImpl;
-import com.google.gwt.user.client.ui.impl.FormPanelImplHost;
+import org.gwtproject.core.client.Scheduler;
+import org.gwtproject.dom.client.Document;
+import org.gwtproject.dom.client.Element;
+import org.gwtproject.dom.client.FormElement;
+import org.gwtproject.event.dom.client.KeyCodes;
+import org.gwtproject.event.dom.client.KeyPressEvent;
+import org.gwtproject.event.dom.client.KeyPressHandler;
+import org.gwtproject.event.legacy.shared.EventHandler;
+import org.gwtproject.event.legacy.shared.GwtEvent;
+import org.gwtproject.event.shared.HandlerRegistration;
+import org.gwtproject.safehtml.client.SafeHtmlTemplates;
+import org.gwtproject.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeUri;
+import org.gwtproject.user.client.Event;
+import org.gwtproject.user.client.ui.HasOneWidget;
+import org.gwtproject.user.client.ui.HasWidgets;
+import org.gwtproject.user.client.ui.NamedFrame;
+import org.gwtproject.user.client.ui.RootPanel;
+import org.gwtproject.user.client.ui.Widget;
+import org.gwtproject.user.client.ui.impl.FormPanelImpl;
+import org.gwtproject.user.client.ui.impl.FormPanelImplHost;
 
 /*
  * #%L
@@ -209,7 +207,7 @@ public abstract class AbstractForm extends FormElementContainer implements FormP
 
     interface IFrameTemplate extends SafeHtmlTemplates {
 
-        static final IFrameTemplate INSTANCE = GWT.create(IFrameTemplate.class);
+        IFrameTemplate INSTANCE = null;
 
         @Template("<iframe src=\"javascript:''\" name='{0}' tabindex='-1' title='Form submit helper frame'"
                 + "style='position:absolute;width:0;height:0;border:0'>")
@@ -220,7 +218,7 @@ public abstract class AbstractForm extends FormElementContainer implements FormP
 
     private static int formId = 0;
 
-    private static final FormPanelImpl impl = GWT.create(FormPanelImpl.class);
+    private static final FormPanelImpl impl = new FormPanelImpl();
 
     private String frameName;
 
@@ -262,7 +260,7 @@ public abstract class AbstractForm extends FormElementContainer implements FormP
             // We use the module name as part of the unique ID to ensure that
             // ids are
             // unique across modules.
-            frameName = "GWTBootstrap3_AbstractForm_" + GWT.getModuleName() + "_" + (++formId);
+            frameName = "GWTBootstrap3_AbstractForm_"  + "_" + (++formId);
             setTarget(frameName);
 
             sinkEvents(Event.ONLOAD);
@@ -479,13 +477,7 @@ public abstract class AbstractForm extends FormElementContainer implements FormP
         // because clients that detach the form panel when submission is
         // complete can cause some browsers (i.e. Mozilla) to go into an
         // 'infinite loading' state. See issue 916.
-        Scheduler.get().scheduleDeferred(new ScheduledCommand() {
-
-            @Override
-            public void execute() {
-                fireEvent(new SubmitCompleteEvent(impl.getContents(synthesizedFrame)));
-            }
-        });
+        Scheduler.get().scheduleDeferred(() -> fireEvent(new SubmitCompleteEvent(impl.getContents(synthesizedFrame))));
     }
 
     private void setTarget(String target) {

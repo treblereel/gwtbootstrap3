@@ -24,7 +24,7 @@ import org.gwtbootstrap3.client.ui.base.HasActive;
 import org.gwtbootstrap3.client.ui.base.helper.StyleHelper;
 import org.gwtbootstrap3.client.ui.constants.Styles;
 
-import com.google.gwt.user.client.ui.UIObject;
+import org.gwtproject.user.client.ui.UIObject;
 
 /**
  * @author Sven Jacobs

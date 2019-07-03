@@ -20,11 +20,10 @@ package org.gwtbootstrap3.client.shared.js;
  * #L%
  */
 
-import com.google.gwt.dom.client.Element;
-
 import jsinterop.annotations.JsMethod;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsType;
+import org.gwtproject.dom.client.Element;
 
 /**
  * jQuery and Bootstrap methods wrapper

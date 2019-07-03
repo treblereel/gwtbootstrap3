@@ -40,19 +40,19 @@ import org.gwtbootstrap3.client.ui.form.validator.ValidationChangedEvent.Validat
 import org.gwtbootstrap3.client.ui.form.validator.Validator;
 import org.gwtbootstrap3.client.ui.gwt.FlowPanel;
 
-import com.google.gwt.editor.client.EditorError;
-import com.google.gwt.editor.client.HasEditorErrors;
-import com.google.gwt.editor.client.LeafValueEditor;
-import com.google.gwt.event.logical.shared.ValueChangeEvent;
-import com.google.gwt.event.logical.shared.ValueChangeHandler;
-import com.google.gwt.text.shared.Parser;
-import com.google.gwt.user.client.ui.HasName;
-import com.google.gwt.user.client.ui.HasOneWidget;
-import com.google.gwt.user.client.ui.HasValue;
-import com.google.gwt.user.client.ui.HasWidgets;
-import com.google.gwt.user.client.ui.IsWidget;
-import com.google.gwt.user.client.ui.Widget;
-import com.google.web.bindery.event.shared.HandlerRegistration;
+import org.gwtproject.editor.client.EditorError;
+import org.gwtproject.editor.client.HasEditorErrors;
+import org.gwtproject.editor.client.LeafValueEditor;
+import org.gwtproject.event.logical.shared.ValueChangeEvent;
+import org.gwtproject.event.logical.shared.ValueChangeHandler;
+import org.gwtproject.event.shared.HandlerRegistration;
+import org.gwtproject.text.shared.Parser;
+import org.gwtproject.user.client.ui.HasName;
+import org.gwtproject.user.client.ui.HasOneWidget;
+import org.gwtproject.user.client.ui.HasValue;
+import org.gwtproject.user.client.ui.HasWidgets;
+import org.gwtproject.user.client.ui.IsWidget;
+import org.gwtproject.user.client.ui.Widget;
 
 /**
  * Contains a group of radio input elements.
@@ -60,8 +60,9 @@ import com.google.web.bindery.event.shared.HandlerRegistration;
  * @param <T> the return value type of the radio group.
  * @author Steven Jardine
  */
-public class RadioGroupBase<T> extends FlowPanel implements HasName, HasValue<T>, LeafValueEditor<T>,
-        HasEditorErrors<T>, HasErrorHandler, HasValidators<T>, HasBlankValidator<T> {
+public class RadioGroupBase<T> extends FlowPanel implements HasName, HasValue<T>,
+                                                            LeafValueEditor<T>,
+                                                            HasEditorErrors<T>, HasErrorHandler, HasValidators<T>, HasBlankValidator<T> {
 
     private final ErrorHandlerMixin<T> errorHandlerMixin = new ErrorHandlerMixin<T>(this);
 
@@ -105,7 +106,7 @@ public class RadioGroupBase<T> extends FlowPanel implements HasName, HasValue<T>
 
     /** {@inheritDoc} */
     @Override
-    public com.google.gwt.event.shared.HandlerRegistration addValueChangeHandler(final ValueChangeHandler<T> handler) {
+    public HandlerRegistration addValueChangeHandler(final ValueChangeHandler<T> handler) {
         return addHandler(handler, ValueChangeEvent.getType());
     }
 

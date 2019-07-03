@@ -45,26 +45,25 @@ import org.gwtbootstrap3.client.ui.form.validator.HasValidators;
 import org.gwtbootstrap3.client.ui.form.validator.ValidationChangedEvent.ValidationChangedHandler;
 import org.gwtbootstrap3.client.ui.form.validator.Validator;
 
-import com.google.gwt.core.client.Scheduler;
-import com.google.gwt.core.client.Scheduler.ScheduledCommand;
-import com.google.gwt.dom.client.Element;
-import com.google.gwt.dom.client.Style.Display;
-import com.google.gwt.dom.client.Style.Unit;
-import com.google.gwt.editor.client.EditorError;
-import com.google.gwt.editor.client.HasEditorErrors;
-import com.google.gwt.event.logical.shared.ResizeEvent;
-import com.google.gwt.event.logical.shared.ResizeHandler;
-import com.google.gwt.user.client.Timer;
-import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.ui.MultiWordSuggestOracle;
-import com.google.gwt.user.client.ui.PopupPanel;
-import com.google.gwt.user.client.ui.SuggestOracle;
-import com.google.gwt.user.client.ui.SuggestOracle.Suggestion;
-import com.google.gwt.user.client.ui.Widget;
-import com.google.web.bindery.event.shared.HandlerRegistration;
+import org.gwtproject.core.client.Scheduler;
+import org.gwtproject.dom.client.Element;
+import org.gwtproject.dom.client.Style.Display;
+import org.gwtproject.dom.client.Style.Unit;
+import org.gwtproject.editor.client.EditorError;
+import org.gwtproject.editor.client.HasEditorErrors;
+import org.gwtproject.event.logical.shared.ResizeEvent;
+import org.gwtproject.event.logical.shared.ResizeHandler;
+import org.gwtproject.event.shared.HandlerRegistration;
+import org.gwtproject.timer.client.Timer;
+import org.gwtproject.user.client.ui.MultiWordSuggestOracle;
+import org.gwtproject.user.client.ui.PopupPanel;
+import org.gwtproject.user.client.ui.SuggestOracle;
+import org.gwtproject.user.client.ui.SuggestOracle.Suggestion;
+import org.gwtproject.user.client.ui.Widget;
+import org.gwtproject.user.window.client.Window;
 
 /**
- * Wrapper for a {@link com.google.gwt.user.client.ui.SuggestBox}.<br/>
+ * Wrapper for a {@link org.gwtproject.user.client.ui.SuggestBox}.<br/>
  * <br/>
  * The default style is inherited from the {@link Styles#DROPDOWN_MENU}. Styling of the suggestions items need
  * a bit of css in order to be pleasing to the eye.
@@ -84,9 +83,10 @@ import com.google.web.bindery.event.shared.HandlerRegistration;
  * 
  * @author Steven Jardine
  */
-public class SuggestBox extends com.google.gwt.user.client.ui.SuggestBox implements HasId, HasResponsiveness, HasPlaceholder,
-        HasAutoComplete, HasSize<InputSize>, HasEditorErrors<String>, HasErrorHandler, HasValidators<String>,
-        HasBlankValidator<String> {
+public class SuggestBox extends org.gwtproject.user.client.ui.SuggestBox implements HasId, HasResponsiveness, HasPlaceholder,
+                                                                                    HasAutoComplete, HasSize<InputSize>,
+                                                                                    HasEditorErrors<String>, HasErrorHandler, HasValidators<String>,
+                                                                                    HasBlankValidator<String> {
 
     static class CustomSuggestionDisplay extends DefaultSuggestionDisplay {
 
@@ -105,8 +105,8 @@ public class SuggestBox extends com.google.gwt.user.client.ui.SuggestBox impleme
          *
          * @param box the box the SuggestBox.
          */
-        private void resizePopup(final com.google.gwt.user.client.ui.SuggestBox box) {
-            Scheduler.get().scheduleDeferred(new ScheduledCommand() {
+        private void resizePopup(final org.gwtproject.user.client.ui.SuggestBox box) {
+            Scheduler.get().scheduleDeferred(new Scheduler.ScheduledCommand() {
                 @Override
                 public void execute() {
                     PopupPanel panel = getPopupPanel();
@@ -126,7 +126,7 @@ public class SuggestBox extends com.google.gwt.user.client.ui.SuggestBox impleme
 
         /** {@inheritDoc} */
         @Override
-        protected void showSuggestions(final com.google.gwt.user.client.ui.SuggestBox suggestBox,
+        protected void showSuggestions(final org.gwtproject.user.client.ui.SuggestBox suggestBox,
                 final Collection<? extends Suggestion> suggestions, final boolean isDisplayStringHTML,
                 final boolean isAutoSelectEnabled, final SuggestionCallback callback) {
             super.showSuggestions(suggestBox, suggestions, isDisplayStringHTML, isAutoSelectEnabled, callback);

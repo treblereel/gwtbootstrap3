@@ -31,19 +31,19 @@ import org.gwtbootstrap3.client.ui.form.validator.ValidationChangedEvent;
 import org.gwtbootstrap3.client.ui.form.validator.ValidationChangedEvent.ValidationChangedHandler;
 import org.gwtbootstrap3.client.ui.form.validator.Validator;
 import org.gwtbootstrap3.client.ui.form.validator.ValidatorWrapper;
-
-import com.google.gwt.editor.client.Editor;
-import com.google.gwt.editor.client.EditorError;
-import com.google.gwt.event.dom.client.BlurEvent;
-import com.google.gwt.event.dom.client.BlurHandler;
-import com.google.gwt.event.logical.shared.ValueChangeEvent;
-import com.google.gwt.event.logical.shared.ValueChangeHandler;
-import com.google.gwt.event.shared.GwtEvent;
-import com.google.gwt.user.client.ui.HasValue;
-import com.google.gwt.user.client.ui.Widget;
-import com.google.web.bindery.event.shared.EventBus;
-import com.google.web.bindery.event.shared.HandlerRegistration;
-import com.google.web.bindery.event.shared.SimpleEventBus;
+import org.gwtproject.editor.client.Editor;
+import org.gwtproject.editor.client.EditorError;
+import org.gwtproject.event.dom.client.BlurEvent;
+import org.gwtproject.event.dom.client.BlurHandler;
+import org.gwtproject.event.legacy.shared.GwtEvent;
+import org.gwtproject.event.logical.shared.ValueChangeEvent;
+import org.gwtproject.event.logical.shared.ValueChangeHandler;
+import org.gwtproject.event.shared.Event;
+import org.gwtproject.event.shared.EventBus;
+import org.gwtproject.event.shared.HandlerRegistration;
+import org.gwtproject.event.shared.SimpleEventBus;
+import org.gwtproject.user.client.ui.HasValue;
+import org.gwtproject.user.client.ui.Widget;
 
 /**
  * Abstract validator mixin. Contains all of the validation logic.
@@ -109,11 +109,6 @@ public class DefaultValidatorMixin<W extends Widget & HasValue<V> & Editor<V>, V
     @Override
     public void addValidator(Validator<V> validator) {
         validators.add(new ValidatorWrapper<V>(validator, validators.size()));
-    }
-
-    @Override
-    public void fireEvent(GwtEvent<?> event) {
-        eventBus.fireEvent(event);
     }
 
     /**
@@ -205,4 +200,8 @@ public class DefaultValidatorMixin<W extends Widget & HasValue<V> & Editor<V>, V
         return valid;
     }
 
+    @Override
+    public void fireEvent(Event<?> event) {
+        eventBus.fireEvent(event);
+    }
 }

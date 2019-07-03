@@ -36,16 +36,16 @@ import org.gwtbootstrap3.client.shared.js.JQuery;
 import org.gwtbootstrap3.client.ui.constants.Placement;
 import org.gwtbootstrap3.client.ui.constants.Trigger;
 
-import com.google.gwt.dom.client.Element;
-import com.google.gwt.event.logical.shared.AttachEvent;
-import com.google.gwt.safehtml.shared.SafeHtml;
-import com.google.gwt.user.client.Event;
-import com.google.gwt.user.client.Timer;
-import com.google.gwt.user.client.ui.HasOneWidget;
-import com.google.gwt.user.client.ui.HasWidgets;
-import com.google.gwt.user.client.ui.IsWidget;
-import com.google.gwt.user.client.ui.Widget;
-import com.google.web.bindery.event.shared.HandlerRegistration;
+import org.gwtproject.dom.client.Element;
+import org.gwtproject.event.logical.shared.AttachEvent;
+import org.gwtproject.event.shared.HandlerRegistration;
+import org.gwtproject.safehtml.shared.SafeHtml;
+import org.gwtproject.timer.client.Timer;
+import org.gwtproject.user.client.Event;
+import org.gwtproject.user.client.ui.HasOneWidget;
+import org.gwtproject.user.client.ui.HasWidgets;
+import org.gwtproject.user.client.ui.IsWidget;
+import org.gwtproject.user.client.ui.Widget;
 
 import jsinterop.annotations.JsMethod;
 

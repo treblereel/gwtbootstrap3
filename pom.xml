@@ -164,28 +164,7 @@
 
         <pluginManagement>
             <plugins>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>gwt-maven-plugin</artifactId>
-                    <version>${gwt.version}</version>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>compile</goal>
-                                <goal>test</goal>
-                                <goal>resources</goal>
-                            </goals>
-                            <configuration>
-                                <mode>htmlunit</mode>
-                                <testTimeOut>240</testTimeOut>
-                                <failOnError>true</failOnError>
-                                <generateJsInteropExports>true</generateJsInteropExports>
-                            </configuration>
-                        </execution>
-                    </executions>
-                    <inherited>true</inherited>
-                </plugin>
-                <plugin>
+                  <plugin>
                     <groupId>org.eclipse.m2e</groupId>
                     <artifactId>lifecycle-mapping</artifactId>
                     <version>1.0.0</version>
@@ -353,26 +332,25 @@
 
     <repositories>
         <repository>
-            <id>sonatype-nexus</id>
-            <name>Sonatype Nexus</name>
-            <url>http://repository.sonatype.org/content/groups/public/</url>
+            <id>vertispan-releases</id>
+            <name>Vertispan hosted artifacts-releases</name>
+            <url>https://repo.vertispan.com/j2cl</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
             <snapshots>
-                <enabled>false</enabled>
+                <enabled>true</enabled>
             </snapshots>
         </repository>
-        <!-- Required for CI to fetch the latest snapshot releases of gwtbootstrap3 -->
         <repository>
-            <id>sonatype-nexus-snapshots</id>
-            <url>http://oss.sonatype.org/content/repositories/snapshots</url>
+            <id>vertispan-snapshots</id>
+            <name>Vertispan Snapshots</name>
+            <url>https://repo.vertispan.com/gwt-snapshot/</url>
             <snapshots>
                 <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
             </snapshots>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
         </repository>
     </repositories>
 

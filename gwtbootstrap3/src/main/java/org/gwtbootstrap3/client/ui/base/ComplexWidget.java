@@ -27,11 +27,11 @@ import org.gwtbootstrap3.client.ui.constants.DeviceSize;
 import org.gwtbootstrap3.client.ui.constants.Pull;
 import org.gwtbootstrap3.client.ui.html.Text;
 
-import com.google.gwt.dom.client.Element;
-import com.google.gwt.dom.client.Style;
-import com.google.gwt.user.client.DOM;
-import com.google.gwt.user.client.ui.ComplexPanel;
-import com.google.gwt.user.client.ui.Widget;
+import org.gwtproject.dom.client.Element;
+import org.gwtproject.dom.client.Style;
+import org.gwtproject.user.client.DOM;
+import org.gwtproject.user.client.ui.ComplexPanel;
+import org.gwtproject.user.client.ui.Widget;
 
 /**
  * Base class for widgets that contain further widgets.
@@ -62,7 +62,7 @@ public class ComplexWidget extends ComplexPanel implements HasId, HasResponsiven
 
     @Override
     @Deprecated
-    protected void insert(Widget child, com.google.gwt.user.client.Element container,
+    protected void insert(Widget child, Element container,
         int beforeIndex, boolean domInsert) {
         // Validate index; adjust if the widget is already a child of this panel.
         beforeIndex = adjustIndex(child, beforeIndex);

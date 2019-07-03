@@ -2,7 +2,7 @@ package org.gwtbootstrap3.client.ui.base;
 
 import java.util.List;
 
-import com.google.gwt.user.client.ui.Widget;
+import org.gwtproject.user.client.ui.Widget;
 
 /*
  * #%L

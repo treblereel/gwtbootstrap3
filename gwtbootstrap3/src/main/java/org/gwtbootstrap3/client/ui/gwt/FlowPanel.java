@@ -33,12 +33,12 @@ import org.gwtbootstrap3.client.ui.base.mixin.IdMixin;
 import org.gwtbootstrap3.client.ui.constants.DeviceSize;
 import org.gwtbootstrap3.client.ui.constants.Spy;
 
-import com.google.gwt.user.client.ui.Widget;
+import org.gwtproject.user.client.ui.Widget;
 
 /**
  * @author Sven Jacobs
  */
-public class FlowPanel extends com.google.gwt.user.client.ui.FlowPanel implements HasDataSpy, HasId, HasDataTarget, HasResponsiveness {
+public class FlowPanel extends org.gwtproject.user.client.ui.FlowPanel implements HasDataSpy, HasId, HasDataTarget, HasResponsiveness {
 
     private final DataSpyMixin<FlowPanel> spyMixin = new DataSpyMixin<FlowPanel>(this);
     private final IdMixin<FlowPanel> idMixin = new IdMixin<FlowPanel>(this);

@@ -29,8 +29,8 @@ import org.gwtbootstrap3.client.ui.constants.DeviceSize;
 import org.gwtbootstrap3.client.ui.constants.Pull;
 import org.gwtbootstrap3.client.ui.constants.Styles;
 
-import com.google.gwt.dom.client.Document;
-import com.google.gwt.user.client.ui.HasEnabled;
+import org.gwtproject.dom.client.Document;
+import org.gwtproject.user.client.ui.HasEnabled;
 
 /**
  * Base class for list items.

@@ -20,12 +20,12 @@ package org.gwtbootstrap3.client.ui.base.mixin;
  * #L%
  */
 
-import com.google.gwt.dom.client.AnchorElement;
-import com.google.gwt.dom.client.ButtonElement;
-import com.google.gwt.dom.client.Element;
-import com.google.gwt.dom.client.InputElement;
-import com.google.gwt.user.client.ui.Focusable;
-import com.google.gwt.user.client.ui.UIObject;
+import org.gwtproject.dom.client.AnchorElement;
+import org.gwtproject.dom.client.ButtonElement;
+import org.gwtproject.dom.client.Element;
+import org.gwtproject.dom.client.InputElement;
+import org.gwtproject.user.client.ui.Focusable;
+import org.gwtproject.user.client.ui.UIObject;
 
 /**
  * @author Sven Jacobs

@@ -27,8 +27,8 @@ import org.gwtbootstrap3.client.ui.constants.Styles;
 import org.gwtbootstrap3.client.ui.constants.Toggle;
 import org.gwtbootstrap3.client.ui.html.Text;
 
-import com.google.gwt.core.client.Scheduler;
-import com.google.gwt.dom.client.Element;
+import org.gwtproject.core.client.Scheduler;
+import org.gwtproject.dom.client.Element;
 
 /**
  * Base class for buttons that can be toggle buttons

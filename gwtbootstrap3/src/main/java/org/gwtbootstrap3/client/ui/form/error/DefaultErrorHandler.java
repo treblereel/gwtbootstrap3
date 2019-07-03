@@ -27,11 +27,10 @@ import org.gwtbootstrap3.client.ui.base.HasValidationState;
 import org.gwtbootstrap3.client.ui.base.ValueBoxBase;
 import org.gwtbootstrap3.client.ui.constants.ValidationState;
 
-import com.google.gwt.editor.client.EditorError;
-import com.google.gwt.event.logical.shared.AttachEvent;
-import com.google.gwt.event.logical.shared.AttachEvent.Handler;
-import com.google.gwt.user.client.ui.HasWidgets;
-import com.google.gwt.user.client.ui.Widget;
+import org.gwtproject.editor.client.EditorError;
+import org.gwtproject.event.logical.shared.AttachEvent;
+import org.gwtproject.user.client.ui.HasWidgets;
+import org.gwtproject.user.client.ui.Widget;
 
 /**
  * This is the default {@link ErrorHandler} implementation. The assumption is that every {@link ValueBoxBase}
@@ -69,7 +68,7 @@ public class DefaultErrorHandler implements ErrorHandler {
         super();
         assert widget != null;
         this.inputWidget = widget;
-        this.inputWidget.addAttachHandler(new Handler() {
+        this.inputWidget.addAttachHandler(new AttachEvent.Handler() {
             @Override
             public void onAttachOrDetach(AttachEvent event) {
                 init();
@@ -118,7 +117,7 @@ public class DefaultErrorHandler implements ErrorHandler {
     public void init() {
         if (initialized) { return; }
         Widget parent = inputWidget.getParent();
-        while (parent != null && !parent.getClass().getName().equals("com.google.gwt.user.client.ui.Widget")) {
+        while (parent != null && !parent.getClass().getName().equals("org.gwtproject.user.client.ui.Widget")) {
             if (parent instanceof HasValidationState) {
                 validationStateParent = (HasValidationState) parent;
                 validationStateHelpBlock = findHelpBlock(inputWidget);

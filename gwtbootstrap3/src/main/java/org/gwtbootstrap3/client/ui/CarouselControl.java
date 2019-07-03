@@ -28,9 +28,9 @@ import org.gwtbootstrap3.client.ui.constants.IconType;
 import org.gwtbootstrap3.client.ui.constants.Styles;
 import org.gwtbootstrap3.client.ui.html.Span;
 
-import com.google.gwt.dom.client.AnchorElement;
-import com.google.gwt.dom.client.Document;
-import com.google.gwt.user.client.ui.HasText;
+import org.gwtproject.dom.client.AnchorElement;
+import org.gwtproject.dom.client.Document;
+import org.gwtproject.user.client.ui.HasText;
 
 /**
  * @author Joshua Godi

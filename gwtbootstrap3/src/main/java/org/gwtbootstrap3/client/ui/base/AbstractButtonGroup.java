@@ -30,8 +30,8 @@ import org.gwtbootstrap3.client.ui.constants.Styles;
 import org.gwtbootstrap3.client.ui.constants.Toggle;
 import org.gwtbootstrap3.client.ui.gwt.FlowPanel;
 
-import com.google.gwt.user.client.ui.HasName;
-import com.google.gwt.user.client.ui.Widget;
+import org.gwtproject.user.client.ui.HasName;
+import org.gwtproject.user.client.ui.Widget;
 
 /**
  * Abstract base class for button groups.
@@ -56,7 +56,7 @@ public abstract class AbstractButtonGroup extends FlowPanel implements HasName, 
      * Convenience method that will set the name of all child widgets that can have a name
      *
      * @param name Name of group
-     * @see #add(com.google.gwt.user.client.ui.Widget)
+     * @see #add(org.gwtproject.user.client.ui.Widget)
      */
     @Override
     public void setName(final String name) {

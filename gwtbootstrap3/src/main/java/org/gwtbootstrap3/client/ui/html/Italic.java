@@ -23,7 +23,7 @@ package org.gwtbootstrap3.client.ui.html;
 import org.gwtbootstrap3.client.ui.base.AbstractTextWidget;
 import org.gwtbootstrap3.client.ui.constants.ElementTags;
 
-import com.google.gwt.dom.client.Document;
+import org.gwtproject.dom.client.Document;
 
 /**
  * Simple {@code <em>} tag to emphasize words

@@ -24,9 +24,9 @@ import org.gwtbootstrap3.client.ui.base.ComplexWidget;
 import org.gwtbootstrap3.client.ui.base.mixin.HTMLMixin;
 import org.gwtbootstrap3.client.ui.constants.Styles;
 
-import com.google.gwt.dom.client.Document;
-import com.google.gwt.user.client.ui.HasText;
-import com.google.gwt.user.client.ui.HasWidgets;
+import org.gwtproject.dom.client.Document;
+import org.gwtproject.user.client.ui.HasText;
+import org.gwtproject.user.client.ui.HasWidgets;
 
 /**
  * @author Joshua Godi

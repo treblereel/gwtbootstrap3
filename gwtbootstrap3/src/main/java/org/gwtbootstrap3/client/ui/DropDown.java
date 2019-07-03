@@ -23,7 +23,7 @@ package org.gwtbootstrap3.client.ui;
 import org.gwtbootstrap3.client.ui.base.AbstractDropDown;
 import org.gwtbootstrap3.client.ui.constants.Styles;
 
-import com.google.gwt.dom.client.Document;
+import org.gwtproject.dom.client.Document;
 
 /**
  * Dropdown parent container.

@@ -21,17 +21,16 @@ package org.gwtbootstrap3.client.ui.impl;
  */
 
 import org.gwtbootstrap3.client.ui.SimpleRadioButton;
-
-import com.google.gwt.event.dom.client.BlurEvent;
-import com.google.gwt.event.dom.client.BlurHandler;
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.event.dom.client.KeyDownEvent;
-import com.google.gwt.event.dom.client.KeyDownHandler;
-import com.google.gwt.event.dom.client.MouseUpEvent;
-import com.google.gwt.event.dom.client.MouseUpHandler;
-import com.google.gwt.event.logical.shared.ValueChangeEvent;
-import com.google.gwt.user.client.ui.SimpleCheckBox;
+import org.gwtproject.event.dom.client.BlurEvent;
+import org.gwtproject.event.dom.client.BlurHandler;
+import org.gwtproject.event.dom.client.ClickEvent;
+import org.gwtproject.event.dom.client.ClickHandler;
+import org.gwtproject.event.dom.client.KeyDownEvent;
+import org.gwtproject.event.dom.client.KeyDownHandler;
+import org.gwtproject.event.dom.client.MouseUpEvent;
+import org.gwtproject.event.dom.client.MouseUpHandler;
+import org.gwtproject.event.logical.shared.ValueChangeEvent;
+import org.gwtproject.user.client.ui.SimpleCheckBox;
 
 public class SimpleRadioButtonImplIE8 extends SimpleRadioButtonImpl {
 
@@ -47,7 +46,7 @@ public class SimpleRadioButtonImplIE8 extends SimpleRadioButtonImpl {
         @Override
         public void onClick(ClickEvent event) {
             ValueChangeEvent.fireIfNotEqual(simpleRadioButton, oldValue,
-                    simpleRadioButton.getValue());
+                                            simpleRadioButton.getValue());
         }
 
         @Override

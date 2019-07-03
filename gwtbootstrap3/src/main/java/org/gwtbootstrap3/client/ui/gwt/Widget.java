@@ -29,7 +29,7 @@ import org.gwtbootstrap3.client.ui.base.mixin.PullMixin;
 import org.gwtbootstrap3.client.ui.constants.DeviceSize;
 import org.gwtbootstrap3.client.ui.constants.Pull;
 
-public class Widget extends com.google.gwt.user.client.ui.Widget implements HasResponsiveness, HasId, HasPull {
+public class Widget extends org.gwtproject.user.client.ui.Widget implements HasResponsiveness, HasId, HasPull {
 
     private final IdMixin<Widget> idMixin = new IdMixin<Widget>(this);
     private final PullMixin<Widget> pullMixin = new PullMixin<Widget>(this);

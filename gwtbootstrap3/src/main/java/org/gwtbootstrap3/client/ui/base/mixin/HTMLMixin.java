@@ -22,8 +22,8 @@ package org.gwtbootstrap3.client.ui.base.mixin;
 
 import org.gwtbootstrap3.client.shared.js.JQuery;
 
-import com.google.gwt.dom.client.Element;
-import com.google.gwt.user.client.ui.UIObject;
+import org.gwtproject.dom.client.Element;
+import org.gwtproject.user.client.ui.UIObject;
 
 /**
  * @author Grant Slender

@@ -29,10 +29,9 @@ import org.gwtbootstrap3.client.ui.constants.Attributes;
 import org.gwtbootstrap3.client.ui.constants.Styles;
 import org.gwtbootstrap3.client.ui.html.Div;
 
-import com.google.gwt.event.shared.HandlerRegistration;
-import com.google.gwt.user.client.Event;
-
 import jsinterop.annotations.JsMethod;
+import org.gwtproject.event.shared.HandlerRegistration;
+import org.gwtproject.user.client.Event;
 
 /**
  * @author Joshua Godi
@@ -151,7 +150,7 @@ public class Carousel extends Div {
         fireEvent(new CarouselSlidEvent(this, evt));
     }
 
-    private void bindJavaScriptEvents(final com.google.gwt.dom.client.Element e) {
+    private void bindJavaScriptEvents(final org.gwtproject.dom.client.Element e) {
         JQuery carousel = JQuery.jQuery(e);
 
         carousel.on("slide.bs.carousel", (evt) -> {
@@ -163,20 +162,20 @@ public class Carousel extends Div {
         });
     }
 
-    private void unbindJavaScriptEvents(final com.google.gwt.dom.client.Element e) {
+    private void unbindJavaScriptEvents(final org.gwtproject.dom.client.Element e) {
         JQuery.jQuery(e).off("slide.bs.carousel");
         JQuery.jQuery(e).off("slid.bs.carousel");
     }
 
     @JsMethod
-    private static native void carousel(final com.google.gwt.dom.client.Element e, final int interval, final String pause,
+    private static native void carousel(final org.gwtproject.dom.client.Element e, final int interval, final String pause,
                                  final boolean wrap);
 
-    private void fireMethod(final com.google.gwt.dom.client.Element e, String method) {
+    private void fireMethod(final org.gwtproject.dom.client.Element e, String method) {
         JQuery.jQuery(e).carousel(method);
     }
 
-    private void fireMethod(final com.google.gwt.dom.client.Element e, int slideNumber) {
+    private void fireMethod(final org.gwtproject.dom.client.Element e, int slideNumber) {
         JQuery.jQuery(e).carousel(slideNumber);
     }
 }

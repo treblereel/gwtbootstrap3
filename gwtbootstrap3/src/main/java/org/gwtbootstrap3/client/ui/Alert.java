@@ -34,12 +34,11 @@ import org.gwtbootstrap3.client.ui.constants.ButtonDismiss;
 import org.gwtbootstrap3.client.ui.constants.Styles;
 import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Text;
-
-import com.google.gwt.dom.client.Element;
-import com.google.gwt.user.client.Event;
-import com.google.gwt.user.client.ui.HasText;
-import com.google.gwt.user.client.ui.HasWidgets;
-import com.google.web.bindery.event.shared.HandlerRegistration;
+import org.gwtproject.dom.client.Element;
+import org.gwtproject.event.shared.HandlerRegistration;
+import org.gwtproject.user.client.Event;
+import org.gwtproject.user.client.ui.HasText;
+import org.gwtproject.user.client.ui.HasWidgets;
 
 /**
  * Alert block.

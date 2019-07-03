@@ -33,23 +33,22 @@ import org.gwtbootstrap3.client.ui.constants.Pull;
 import org.gwtbootstrap3.client.ui.gwt.Widget;
 import org.gwtbootstrap3.client.ui.impl.SimpleCheckBoxImpl;
 
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.dom.client.Document;
-import com.google.gwt.dom.client.Element;
-import com.google.gwt.dom.client.InputElement;
-import com.google.gwt.event.dom.client.ChangeEvent;
-import com.google.gwt.event.dom.client.ChangeHandler;
-import com.google.gwt.event.dom.client.HasChangeHandlers;
-import com.google.gwt.event.shared.HandlerRegistration;
-import com.google.gwt.user.client.ui.RootPanel;
+import org.gwtproject.dom.client.Document;
+import org.gwtproject.dom.client.Element;
+import org.gwtproject.dom.client.InputElement;
+import org.gwtproject.event.dom.client.ChangeEvent;
+import org.gwtproject.event.dom.client.ChangeHandler;
+import org.gwtproject.event.dom.client.HasChangeHandlers;
+import org.gwtproject.event.shared.HandlerRegistration;
+import org.gwtproject.user.client.ui.RootPanel;
 
 /**
  * A simple checkbox widget, with no label.
  */
-public class SimpleCheckBox extends com.google.gwt.user.client.ui.SimpleCheckBox implements HasResponsiveness, HasId,
+public class SimpleCheckBox extends org.gwtproject.user.client.ui.SimpleCheckBox implements HasResponsiveness, HasId,
         HasPull, HasFormValue, HasChangeHandlers {
 
-    private static final SimpleCheckBoxImpl impl = GWT.create(SimpleCheckBoxImpl.class);
+    private static final SimpleCheckBoxImpl impl = new SimpleCheckBoxImpl();
 
     /**
      * Creates a SimpleCheckBox widget that wraps an existing &lt;input

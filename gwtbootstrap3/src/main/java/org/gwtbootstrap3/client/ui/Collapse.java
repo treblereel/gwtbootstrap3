@@ -20,9 +20,7 @@ package org.gwtbootstrap3.client.ui;
  * #L%
  */
 
-import com.google.gwt.dom.client.Element;
-import com.google.gwt.event.shared.HandlerRegistration;
-import com.google.gwt.user.client.Event;
+import org.gwtproject.dom.client.Element;
 
 import org.gwtbootstrap3.client.shared.event.HiddenEvent;
 import org.gwtbootstrap3.client.shared.event.HiddenHandler;
@@ -37,6 +35,8 @@ import org.gwtbootstrap3.client.ui.base.helper.StyleHelper;
 import org.gwtbootstrap3.client.ui.constants.CollapseParam;
 import org.gwtbootstrap3.client.ui.constants.Styles;
 import org.gwtbootstrap3.client.ui.html.Div;
+import org.gwtproject.event.shared.HandlerRegistration;
+import org.gwtproject.user.client.Event;
 
 /**
  * @author Grant Slender
@@ -171,7 +171,7 @@ public class Collapse extends Div {
         fireEvent(new HiddenEvent(evt));
     }
 
-    private void bindJavaScriptEvents(final com.google.gwt.dom.client.Element e) {
+    private void bindJavaScriptEvents(final org.gwtproject.dom.client.Element e) {
         JQuery collapse = JQuery.jQuery(e);
 
         collapse.on("show.bs.collapse", (evt) -> {

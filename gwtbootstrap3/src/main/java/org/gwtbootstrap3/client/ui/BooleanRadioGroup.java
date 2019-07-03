@@ -23,7 +23,7 @@ package org.gwtbootstrap3.client.ui;
 import org.gwtbootstrap3.client.ui.base.RadioGroupBase;
 import org.gwtbootstrap3.client.ui.form.validator.BooleanParser;
 
-import com.google.gwt.uibinder.client.UiConstructor;
+import org.gwtproject.uibinder.client.UiConstructor;
 
 /**
  * A radio group that returns a boolean value.

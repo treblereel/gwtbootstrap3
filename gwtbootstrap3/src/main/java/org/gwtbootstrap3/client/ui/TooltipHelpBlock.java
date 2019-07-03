@@ -23,9 +23,9 @@ package org.gwtbootstrap3.client.ui;
 import org.gwtbootstrap3.client.ui.constants.IconType;
 import org.gwtbootstrap3.client.ui.constants.Placement;
 
-import com.google.gwt.dom.client.Document;
-import com.google.gwt.dom.client.Style.Unit;
-import com.google.gwt.event.dom.client.DomEvent;
+import org.gwtproject.dom.client.Document;
+import org.gwtproject.dom.client.Style.Unit;
+import org.gwtproject.event.dom.client.DomEvent;
 
 /**
  * Tooltip help block. Tooltips can be styled by specifiying the tooltip-danger class in your css.

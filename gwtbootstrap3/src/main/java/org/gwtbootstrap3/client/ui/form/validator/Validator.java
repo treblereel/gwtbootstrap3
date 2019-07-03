@@ -22,8 +22,8 @@ package org.gwtbootstrap3.client.ui.form.validator;
 
 import java.util.List;
 
-import com.google.gwt.editor.client.Editor;
-import com.google.gwt.editor.client.EditorError;
+import org.gwtproject.editor.client.Editor;
+import org.gwtproject.editor.client.EditorError;
 
 /**
  * An input validator.

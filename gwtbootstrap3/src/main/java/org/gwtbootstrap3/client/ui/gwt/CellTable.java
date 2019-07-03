@@ -24,16 +24,15 @@ import org.gwtbootstrap3.client.ui.base.HasResponsiveness;
 import org.gwtbootstrap3.client.ui.base.helper.StyleHelper;
 import org.gwtbootstrap3.client.ui.constants.DeviceSize;
 import org.gwtbootstrap3.client.ui.constants.TableType;
-
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.resources.client.ImageResource;
-import com.google.gwt.user.client.ui.Widget;
-import com.google.gwt.view.client.ProvidesKey;
+import org.gwtproject.resources.client.ImageResource;
+import org.gwtproject.user.cellview.client.CellTable_ResourcesImpl;
+import org.gwtproject.user.client.ui.Widget;
+import org.gwtproject.view.client.ProvidesKey;
 
 /**
  * @author Joshua Godi
  */
-public class CellTable<T> extends com.google.gwt.user.cellview.client.CellTable<T> implements HasResponsiveness {
+public class CellTable<T> extends org.gwtproject.user.cellview.client.CellTable<T> implements HasResponsiveness {
     private static final int DEFAULT_PAGESIZE = 15;
     private static Resources DEFAULT_RESOURCES;
 
@@ -130,7 +129,7 @@ public class CellTable<T> extends com.google.gwt.user.cellview.client.CellTable<
 
     private static Resources getDefaultResources() {
         if (DEFAULT_RESOURCES == null) {
-            final CellTable.Resources cellTableResources = GWT.create(CellTable.Resources.class);
+            final CellTable.Resources cellTableResources = new CellTable_ResourcesImpl();
             DEFAULT_RESOURCES = new ResourcesAdapter(cellTableResources);
         }
         return DEFAULT_RESOURCES;

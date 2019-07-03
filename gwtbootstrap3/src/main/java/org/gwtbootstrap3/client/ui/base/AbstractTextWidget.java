@@ -26,13 +26,13 @@ import org.gwtbootstrap3.client.ui.base.mixin.PullMixin;
 import org.gwtbootstrap3.client.ui.constants.DeviceSize;
 import org.gwtbootstrap3.client.ui.constants.Pull;
 
-import com.google.gwt.dom.client.Element;
-import com.google.gwt.dom.client.Style;
-import com.google.gwt.editor.client.IsEditor;
-import com.google.gwt.editor.client.LeafValueEditor;
-import com.google.gwt.editor.ui.client.adapters.HasTextEditor;
-import com.google.gwt.user.client.ui.HasHTML;
-import com.google.gwt.user.client.ui.Widget;
+import org.gwtproject.dom.client.Element;
+import org.gwtproject.dom.client.Style;
+import org.gwtproject.editor.client.IsEditor;
+import org.gwtproject.editor.client.LeafValueEditor;
+import org.gwtproject.editor.ui.client.adapters.HasTextEditor;
+import org.gwtproject.user.client.ui.HasHTML;
+import org.gwtproject.user.client.ui.Widget;
 
 /**
  * Base class for {@link Widget} that just contains text.
@@ -40,7 +40,8 @@ import com.google.gwt.user.client.ui.Widget;
  * @author Sven Jacobs
  * @author Joshua Godi
  */
-public abstract class AbstractTextWidget extends Widget implements HasId, HasHTML, HasResponsiveness, HasInlineStyle, IsEditor<LeafValueEditor<String>>, HasPull {
+public abstract class AbstractTextWidget extends Widget implements HasId, HasHTML, HasResponsiveness, HasInlineStyle,
+                                                                   IsEditor<LeafValueEditor<String>>, HasPull {
     private final PullMixin<AbstractTextWidget> pullMixin = new PullMixin<AbstractTextWidget>(this);
     private final IdMixin<AbstractTextWidget> idMixin = new IdMixin<AbstractTextWidget>(this);
     private LeafValueEditor<String> editor;

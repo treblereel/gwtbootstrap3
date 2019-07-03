@@ -24,9 +24,9 @@ import org.gwtbootstrap3.client.ui.form.error.ErrorHandler;
 import org.gwtbootstrap3.client.ui.form.validator.BlankValidator;
 import org.gwtbootstrap3.client.ui.form.validator.Validator;
 
-import com.google.gwt.editor.client.Editor;
-import com.google.gwt.user.client.ui.HasValue;
-import com.google.gwt.user.client.ui.Widget;
+import org.gwtproject.editor.client.Editor;
+import org.gwtproject.user.client.ui.HasValue;
+import org.gwtproject.user.client.ui.Widget;
 
 /**
  * Mixin that provides the allowBlank functionality for input fields.

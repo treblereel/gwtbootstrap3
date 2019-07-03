@@ -22,8 +22,6 @@ package org.gwtbootstrap3.client.ui.form.validator;
 
 import java.util.MissingResourceException;
 
-import com.google.gwt.core.client.GWT;
-
 /**
  * Default implementation of the validator message mixin. This can be replaced with your own version by using
  * a "replace-with" statment in the gwt module file.
@@ -42,7 +40,7 @@ import com.google.gwt.core.client.GWT;
  */
 public class DefaultValidatorMessageMixin implements ValidatorMessageMixin {
 
-    protected ValidationMessages messages = GWT.create(ValidationMessages.class);
+    protected ValidationMessages messages;
 
     /** {@inheritDoc} */
     public String lookup(String key) {

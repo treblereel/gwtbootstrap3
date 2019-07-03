@@ -23,9 +23,9 @@ package org.gwtbootstrap3.client.ui;
 import org.gwtbootstrap3.client.shared.js.JQuery;
 import org.gwtbootstrap3.client.ui.base.HasId;
 
-import com.google.gwt.dom.client.Document;
-import com.google.gwt.dom.client.Element;
-import com.google.gwt.user.client.ui.UIObject;
+import org.gwtproject.dom.client.Document;
+import org.gwtproject.dom.client.Element;
+import org.gwtproject.user.client.ui.UIObject;
 
 import jsinterop.annotations.JsMethod;
 
@@ -36,7 +36,7 @@ import jsinterop.annotations.JsMethod;
  * {@code <ul class="nav">} or {@link Nav}.
  * <p/>
  * Also the ScrollSpy must be initialized when the target element has been added
- * to the DOM, for example in {@link com.google.gwt.user.client.ui.Widget#onAttach()}.
+ * to the DOM, for example in {@link org.gwtproject.user.client.ui.Widget#onAttach()}.
  * <pre>{@code
  * &#64;Override
  * protected void onAttach() {

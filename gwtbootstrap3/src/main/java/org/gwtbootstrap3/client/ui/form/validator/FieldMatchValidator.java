@@ -22,7 +22,7 @@ package org.gwtbootstrap3.client.ui.form.validator;
 
 import org.gwtbootstrap3.client.ui.form.validator.ValidationMessages.Keys;
 
-import com.google.gwt.user.client.ui.HasValue;
+import org.gwtproject.user.client.ui.HasValue;
 
 /**
  * Validator for matching with another field.

@@ -28,9 +28,9 @@ import org.gwtbootstrap3.client.ui.constants.Styles;
  * Convenience derivation from GWT's ListBox that can have an ID.
  *
  * @author Sven Jacobs
- * @see com.google.gwt.user.client.ui.ListBox
+ * @see org.gwtproject.user.client.ui.ListBox
  */
-public class ListBox extends com.google.gwt.user.client.ui.ListBox implements HasId {
+public class ListBox extends org.gwtproject.user.client.ui.ListBox implements HasId {
 
     private final IdMixin<ListBox> idMixin = new IdMixin<ListBox>(this);
 

@@ -25,12 +25,12 @@ import java.util.Map;
 
 import org.gwtbootstrap3.client.ui.form.validator.ValidationChangedEvent.ValidationChangedHandler;
 
-import com.google.gwt.editor.client.Editor;
-import com.google.gwt.event.shared.GwtEvent;
-import com.google.gwt.user.client.ui.Widget;
-import com.google.web.bindery.event.shared.EventBus;
-import com.google.web.bindery.event.shared.HandlerRegistration;
-import com.google.web.bindery.event.shared.SimpleEventBus;
+import org.gwtproject.event.legacy.shared.GwtEvent;
+import org.gwtproject.event.shared.Event;
+import org.gwtproject.event.shared.EventBus;
+import org.gwtproject.event.shared.HandlerRegistration;
+import org.gwtproject.event.shared.SimpleEventBus;
+import org.gwtproject.user.client.ui.Widget;
 
 /**
  * Useful for validating a group of fields that implement the {@link HasValidators} interface.
@@ -86,9 +86,8 @@ public class GroupValidator implements ValidationChangedEvent.HasValidationChang
         return eventBus.addHandler(ValidationChangedEvent.getType(), handler);
     }
 
-    /** {@inheritDoc} */
     @Override
-    public void fireEvent(GwtEvent<?> event) {
+    public void fireEvent(Event<?> event) {
         eventBus.fireEvent(event);
     }
 

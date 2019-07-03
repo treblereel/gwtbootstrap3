@@ -22,7 +22,7 @@ package org.gwtbootstrap3.client.ui.base;
 
 import org.gwtbootstrap3.client.ui.constants.Styles;
 
-import com.google.gwt.dom.client.Element;
+import org.gwtproject.dom.client.Element;
 
 /**
  * @author Sven Jacobs

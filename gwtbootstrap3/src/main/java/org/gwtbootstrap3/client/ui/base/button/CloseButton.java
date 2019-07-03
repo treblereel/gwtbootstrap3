@@ -21,9 +21,8 @@ package org.gwtbootstrap3.client.ui.base.button;
  */
 
 import org.gwtbootstrap3.client.ui.constants.Styles;
-
-import com.google.gwt.dom.client.Document;
-import com.google.gwt.dom.client.Element;
+import org.gwtproject.dom.client.Document;
+import org.gwtproject.dom.client.Element;
 
 /**
  * Button that represents a close ("x") icon, usually used within an {@link org.gwtbootstrap3.client.ui.Alert}.

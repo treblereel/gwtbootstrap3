@@ -22,7 +22,7 @@ package org.gwtbootstrap3.client.shared.event;
 
 import org.gwtbootstrap3.client.ui.Tooltip;
 
-import com.google.gwt.user.client.Event;
+import org.gwtproject.event.shared.Event;
 
 /**
  * @author Pontus Enmark

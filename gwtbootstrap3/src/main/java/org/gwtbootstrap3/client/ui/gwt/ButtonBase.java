@@ -30,9 +30,9 @@ import org.gwtbootstrap3.client.ui.base.mixin.PullMixin;
 import org.gwtbootstrap3.client.ui.constants.DeviceSize;
 import org.gwtbootstrap3.client.ui.constants.Pull;
 
-import com.google.gwt.dom.client.Element;
+import org.gwtproject.dom.client.Element;
 
-public abstract class ButtonBase extends com.google.gwt.user.client.ui.ButtonBase implements HasResponsiveness, HasId,
+public abstract class ButtonBase extends org.gwtproject.user.client.ui.ButtonBase implements HasResponsiveness, HasId,
         HasPull {
 
     private final IdMixin<ButtonBase> idMixin = new IdMixin<ButtonBase>(this);

@@ -40,19 +40,19 @@ import org.gwtbootstrap3.client.ui.form.validator.HasValidators;
 import org.gwtbootstrap3.client.ui.form.validator.ValidationChangedEvent.ValidationChangedHandler;
 import org.gwtbootstrap3.client.ui.form.validator.Validator;
 
-import com.google.gwt.editor.client.EditorError;
-import com.google.gwt.editor.client.HasEditorErrors;
-import com.google.gwt.text.shared.Renderer;
-import com.google.gwt.user.client.ui.HasConstrainedValue;
-import com.google.gwt.user.client.ui.HasName;
-import com.google.gwt.user.client.ui.Widget;
-import com.google.gwt.view.client.ProvidesKey;
-import com.google.gwt.view.client.SimpleKeyProvider;
-import com.google.web.bindery.event.shared.HandlerRegistration;
+import org.gwtproject.editor.client.EditorError;
+import org.gwtproject.editor.client.HasEditorErrors;
+import org.gwtproject.event.shared.HandlerRegistration;
+import org.gwtproject.text.shared.Renderer;
+import org.gwtproject.user.client.ui.HasConstrainedValue;
+import org.gwtproject.user.client.ui.HasName;
+import org.gwtproject.user.client.ui.Widget;
+import org.gwtproject.view.client.ProvidesKey;
+import org.gwtproject.view.client.SimpleKeyProvider;
 
 /**
  * Implementation of {@link HasConstrainedValue} based on a
- * {@link com.google.gwt.dom.client.SelectElement}.
+ * {@link org.gwtproject.dom.client.SelectElement}.
  * <p/>
  * A {@link Renderer Renderer<T>} is used to get user-presentable strings to
  * display in the select element.
@@ -60,9 +60,10 @@ import com.google.web.bindery.event.shared.HandlerRegistration;
  * @param <T>
  *            the value type
  */
-public class ValueListBox<T> extends com.google.gwt.user.client.ui.ValueListBox<T> implements HasName, HasId,
-        HasResponsiveness, HasPlaceholder, HasSize<InputSize>, HasEditorErrors<T>, HasErrorHandler, HasValidators<T>,
-        HasBlankValidator<T> {
+public class ValueListBox<T> extends org.gwtproject.user.client.ui.ValueListBox<T> implements HasName, HasId,
+                                                                                              HasResponsiveness, HasPlaceholder, HasSize<InputSize>,
+                                                                                              HasEditorErrors<T>, HasErrorHandler, HasValidators<T>,
+                                                                                              HasBlankValidator<T> {
 
     private final IdMixin<ValueListBox<T>> idMixin = new IdMixin<ValueListBox<T>>(this);
 

@@ -20,10 +20,9 @@ package org.gwtbootstrap3.client;
  * #L%
  */
 
-import com.google.gwt.core.client.EntryPoint;
-import com.google.gwt.core.client.ScriptInjector;
-
 import jsinterop.annotations.JsMethod;
+import org.gwtproject.core.client.EntryPoint;
+import org.gwtproject.core.client.ScriptInjector;
 
 /**
  * Provides script injection for jQuery and boostrap if they aren't already loaded.

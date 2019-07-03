@@ -21,8 +21,7 @@ package org.gwtbootstrap3.client.shared.event;
  */
 
 import org.gwtbootstrap3.client.ui.Carousel;
-
-import com.google.gwt.user.client.Event;
+import org.gwtproject.user.client.Event;
 
 /**
  * @author Joshua Godi

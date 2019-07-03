@@ -23,9 +23,9 @@ package org.gwtbootstrap3.client.ui;
 import org.gwtbootstrap3.client.ui.base.button.AbstractToggleButton;
 import org.gwtbootstrap3.client.ui.constants.IconType;
 
-import com.google.gwt.dom.client.Document;
-import com.google.gwt.dom.client.Element;
-import com.google.gwt.event.dom.client.ClickHandler;
+import org.gwtproject.dom.client.Document;
+import org.gwtproject.dom.client.Element;
+import org.gwtproject.event.dom.client.ClickHandler;
 
 /**
  * Button based on {@code <button>} element with different types and sizes.

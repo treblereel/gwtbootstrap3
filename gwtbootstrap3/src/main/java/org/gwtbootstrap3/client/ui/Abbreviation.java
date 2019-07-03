@@ -22,9 +22,8 @@ package org.gwtbootstrap3.client.ui;
 
 import org.gwtbootstrap3.client.ui.base.AbstractTextWidget;
 import org.gwtbootstrap3.client.ui.constants.ElementTags;
-
-import com.google.gwt.dom.client.Document;
-import com.google.gwt.uibinder.client.UiConstructor;
+import org.gwtproject.dom.client.Document;
+import org.gwtproject.uibinder.client.UiConstructor;
 
 /**
  * Simple {@code <abbr>} block for abbreviating words.

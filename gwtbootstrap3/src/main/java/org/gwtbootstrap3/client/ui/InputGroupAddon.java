@@ -33,7 +33,7 @@ import org.gwtbootstrap3.client.ui.constants.IconSize;
 import org.gwtbootstrap3.client.ui.constants.IconType;
 import org.gwtbootstrap3.client.ui.constants.Styles;
 
-import com.google.gwt.user.client.ui.HasText;
+import org.gwtproject.user.client.ui.HasText;
 
 /**
  * Prepends or appends texts to input fields.

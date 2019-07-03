@@ -24,8 +24,8 @@ import org.gwtbootstrap3.client.ui.base.HasSubText;
 import org.gwtbootstrap3.client.ui.constants.Styles;
 import org.gwtbootstrap3.client.ui.html.Div;
 
-import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
-import com.google.gwt.user.client.ui.HasText;
+import org.gwtproject.safehtml.shared.SafeHtmlBuilder;
+import org.gwtproject.user.client.ui.HasText;
 
 /**
  * Page header with optional subtext

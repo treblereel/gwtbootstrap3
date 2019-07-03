@@ -32,10 +32,10 @@ import org.gwtbootstrap3.client.ui.constants.Styles;
 import org.gwtbootstrap3.client.ui.html.Small;
 import org.gwtbootstrap3.client.ui.html.Text;
 
-import com.google.gwt.dom.client.Document;
-import com.google.gwt.uibinder.client.UiConstructor;
-import com.google.gwt.user.client.ui.HasText;
-import com.google.gwt.user.client.ui.HasWidgets;
+import org.gwtproject.dom.client.Document;
+import org.gwtproject.uibinder.client.UiConstructor;
+import org.gwtproject.user.client.ui.HasText;
+import org.gwtproject.user.client.ui.HasWidgets;
 
 /**
  * Represents a Heading tag, has an optional subtext.

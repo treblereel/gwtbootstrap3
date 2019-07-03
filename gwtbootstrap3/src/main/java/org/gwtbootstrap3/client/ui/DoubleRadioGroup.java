@@ -22,24 +22,21 @@ package org.gwtbootstrap3.client.ui;
 
 import org.gwtbootstrap3.client.ui.base.RadioGroupBase;
 
-import com.google.gwt.text.client.DoubleParser;
-import com.google.gwt.uibinder.client.UiConstructor;
+import org.gwtproject.text.client.DoubleParser;
+import org.gwtproject.uibinder.client.UiConstructor;
 
 /**
  * A radio group that returns a double value.
- * 
  * @author Steven Jardine
  */
 public class DoubleRadioGroup extends RadioGroupBase<Double> {
 
     /**
      * Constructor.
-     * 
      * @param name the name.
      */
     @UiConstructor
     public DoubleRadioGroup(final String name) {
         super(name, DoubleParser.instance());
     }
-
 }

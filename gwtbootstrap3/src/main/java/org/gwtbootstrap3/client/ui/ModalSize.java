@@ -22,7 +22,7 @@ package org.gwtbootstrap3.client.ui;
 
 import org.gwtbootstrap3.client.ui.base.helper.EnumHelper;
 
-import com.google.gwt.dom.client.Style;
+import org.gwtproject.dom.client.Style;
 
 /**
  * @author Jay Hodgson

@@ -20,8 +20,8 @@ package org.gwtbootstrap3.client.ui.base.mixin;
  * #L%
  */
 
-import com.google.gwt.core.client.Scheduler;
-import com.google.gwt.user.client.ui.HasText;
+import org.gwtproject.core.client.Scheduler;
+import org.gwtproject.user.client.ui.HasText;
 
 import org.gwtbootstrap3.client.ui.Badge;
 import org.gwtbootstrap3.client.ui.Icon;
