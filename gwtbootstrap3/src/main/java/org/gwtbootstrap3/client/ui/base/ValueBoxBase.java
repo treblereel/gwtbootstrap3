@@ -112,7 +112,7 @@ public class ValueBoxBase<T> extends org.gwtproject.user.client.ui.ValueBoxBase<
 
     @Override
     public void setSize(InputSize size) {
-        StyleHelper.addUniqueEnumStyleName(this, InputSize.class, size);
+        StyleHelper.addUniqueEnumStyleName(this, InputSize.values(), size);
     }
 
     @Override

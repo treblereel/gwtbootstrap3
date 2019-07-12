@@ -54,7 +54,7 @@ public class NavbarText extends ComplexWidget implements HasResponsiveness {
             navbarPull = NavbarPull.RIGHT;
         }
 
-        StyleHelper.addUniqueEnumStyleName(this, NavbarPull.class, navbarPull);
+        StyleHelper.addUniqueEnumStyleName(this, NavbarPull.values(), navbarPull);
     }
 
     @Override

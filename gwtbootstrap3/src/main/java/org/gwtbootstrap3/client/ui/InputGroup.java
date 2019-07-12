@@ -42,7 +42,7 @@ public class InputGroup extends FlowPanel implements HasSize<InputGroupSize> {
 
     @Override
     public void setSize(InputGroupSize size) {
-        StyleHelper.addUniqueEnumStyleName(this, InputGroupSize.class, size);
+        StyleHelper.addUniqueEnumStyleName(this, InputGroupSize.values(), size);
     }
 
     @Override

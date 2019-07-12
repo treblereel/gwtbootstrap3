@@ -42,7 +42,7 @@ public enum ButtonType implements Type, Style.HasCssName, Iterable {
 
     private final String cssClass;
 
-    private ButtonType(final String cssClass) {
+    ButtonType(final String cssClass) {
         this.cssClass = cssClass;
     }
 
@@ -58,4 +58,5 @@ public enum ButtonType implements Type, Style.HasCssName, Iterable {
     @Override
     public Iterator iterator() {
         return Arrays.asList(ButtonType.values()).iterator();
-    }}
+    }
+}

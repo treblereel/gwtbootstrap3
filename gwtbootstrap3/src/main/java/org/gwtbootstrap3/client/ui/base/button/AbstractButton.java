@@ -146,7 +146,7 @@ public abstract class AbstractButton extends ComplexWidget implements HasEnabled
      */
     @Override
     public void setType(final ButtonType type) {
-        StyleHelper.addUniqueEnumStyleName(this, ButtonType.class, type);
+        StyleHelper.addUniqueEnumStyleName(this, ButtonType.values(), type);
     }
 
     @Override
@@ -161,7 +161,7 @@ public abstract class AbstractButton extends ComplexWidget implements HasEnabled
      */
     @Override
     public void setSize(final ButtonSize size) {
-        StyleHelper.addUniqueEnumStyleName(this, ButtonSize.class, size);
+        StyleHelper.addUniqueEnumStyleName(this, ButtonSize.values(), size);
     }
 
     @Override

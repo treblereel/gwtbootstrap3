@@ -54,7 +54,7 @@ public class FormPanel extends org.gwtproject.user.client.ui.FormPanel
 
     @Override
     public void setType(final FormType type) {
-        StyleHelper.addUniqueEnumStyleName(this, FormType.class, type);
+        StyleHelper.addUniqueEnumStyleName(this, FormType.values(), type);
     }
 
     @Override

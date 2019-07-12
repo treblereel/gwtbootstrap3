@@ -26,7 +26,7 @@ import org.junit.Test;
 import static org.gwtbootstrap3.client.ui.base.helper.EnumHelper.fromStyleName;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.nullValue;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 /**
  * @author Sven Jacobs

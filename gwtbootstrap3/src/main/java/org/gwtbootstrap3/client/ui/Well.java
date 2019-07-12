@@ -58,7 +58,7 @@ public class Well extends Div implements HasSize<WellSize> {
      */
     @Override
     public void setSize(final WellSize size) {
-        StyleHelper.addUniqueEnumStyleName(this, WellSize.class, size);
+        StyleHelper.addUniqueEnumStyleName(this, WellSize.values(), size);
     }
 
     /**

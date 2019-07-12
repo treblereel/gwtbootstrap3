@@ -24,7 +24,7 @@ import org.junit.Test;
 
 import static org.gwtbootstrap3.client.ui.base.helper.StyleHelper.containsStyle;
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author Sven Jacobs
@@ -35,12 +35,12 @@ public class StyleHelperTest {
     public void testContainsStyle() {
         final String styleNames = "abc-efg 123 hji-klm";
 
-        assertThat(containsStyle(styleNames, "abc-efg"), is(true));
-        assertThat(containsStyle(styleNames, "123"), is(true));
-        assertThat(containsStyle(styleNames, "hji-klm"), is(true));
-        assertThat(containsStyle(styleNames, "mno"), is(false));
-        assertThat(containsStyle(null, "hji-klm"), is(false));
-        assertThat(containsStyle(styleNames, null), is(false));
-        assertThat(containsStyle("abc", "abc"), is(true));
+        assertEquals(containsStyle(styleNames, "abc-efg"), is(true));
+        assertEquals(containsStyle(styleNames, "123"), is(true));
+        assertEquals(containsStyle(styleNames, "hji-klm"), is(true));
+        assertEquals(containsStyle(styleNames, "mno"), is(false));
+        assertEquals(containsStyle(null, "hji-klm"), is(false));
+        assertEquals(containsStyle(styleNames, null), is(false));
+        assertEquals(containsStyle("abc", "abc"), is(true));
     }
 }

@@ -50,7 +50,7 @@ public class Progress extends Div implements HasType<ProgressType>, HasActive {
 
     @Override
     public void setType(final ProgressType type) {
-        StyleHelper.addUniqueEnumStyleName(this, ProgressType.class, type);
+        StyleHelper.addUniqueEnumStyleName(this, ProgressType.values(), type);
     }
 
     @Override

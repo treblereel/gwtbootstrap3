@@ -82,7 +82,7 @@ public class Label extends AbstractTextWidget implements HasType<LabelType>, Has
      */
     @Override
     public void setType(final LabelType type) {
-        StyleHelper.addUniqueEnumStyleName(this, LabelType.class, type);
+        StyleHelper.addUniqueEnumStyleName(this, LabelType.values(), type);
     }
 
     @Override

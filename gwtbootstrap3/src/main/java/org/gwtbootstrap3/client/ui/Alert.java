@@ -134,7 +134,7 @@ public class Alert extends Div implements HasWidgets, HasText, HasType<AlertType
      */
     @Override
     public void setType(final AlertType type) {
-        StyleHelper.addUniqueEnumStyleName(this, AlertType.class, type);
+        StyleHelper.addUniqueEnumStyleName(this, AlertType.values(), type);
     }
 
     /**

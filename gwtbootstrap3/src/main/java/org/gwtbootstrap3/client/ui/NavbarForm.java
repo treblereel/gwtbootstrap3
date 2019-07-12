@@ -47,7 +47,7 @@ public class NavbarForm extends AbstractForm implements HasPull {
             navbarPull = NavbarPull.RIGHT;
         }
 
-        StyleHelper.addUniqueEnumStyleName(this, NavbarPull.class, navbarPull);
+        StyleHelper.addUniqueEnumStyleName(this, NavbarPull.values(), navbarPull);
     }
 
     @Override

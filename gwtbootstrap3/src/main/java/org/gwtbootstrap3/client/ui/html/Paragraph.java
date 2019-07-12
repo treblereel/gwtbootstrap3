@@ -64,7 +64,7 @@ public class Paragraph extends HTMLPanel implements HasAlignment, HasEmphasis {
 
     @Override
     public void setAlignment(final Alignment alignment) {
-        StyleHelper.addUniqueEnumStyleName(this, Alignment.class, alignment);
+        StyleHelper.addUniqueEnumStyleName(this, Alignment.values(), alignment);
     }
 
     @Override
@@ -74,7 +74,7 @@ public class Paragraph extends HTMLPanel implements HasAlignment, HasEmphasis {
 
     @Override
     public void setEmphasis(final Emphasis emphasis) {
-        StyleHelper.addUniqueEnumStyleName(this, Emphasis.class, emphasis);
+        StyleHelper.addUniqueEnumStyleName(this, Emphasis.values(), emphasis);
     }
 
     @Override
