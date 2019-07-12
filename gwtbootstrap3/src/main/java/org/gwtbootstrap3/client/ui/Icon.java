@@ -62,7 +62,7 @@ public class Icon extends ComplexWidget implements HasType<IconType>, HasSize<Ic
 
     @Override
     public void setType(final IconType type) {
-        StyleHelper.addUniqueEnumStyleName(this, IconType.class, type);
+        StyleHelper.addUniqueEnumStyleName(this, IconType.values(), type);
     }
 
     @Override
@@ -130,7 +130,7 @@ public class Icon extends ComplexWidget implements HasType<IconType>, HasSize<Ic
         if (iconRotate == null) {
             return;
         }
-        StyleHelper.addUniqueEnumStyleName(this, IconRotate.class, iconRotate);
+        StyleHelper.addUniqueEnumStyleName(this, IconRotate.values(), iconRotate);
     }
 
     public IconRotate getRotate() {
@@ -142,7 +142,7 @@ public class Icon extends ComplexWidget implements HasType<IconType>, HasSize<Ic
             return;
         }
 
-        StyleHelper.addUniqueEnumStyleName(this, IconFlip.class, iconFlip);
+        StyleHelper.addUniqueEnumStyleName(this, IconFlip.values(), iconFlip);
     }
 
     public IconFlip getFlip() {
@@ -151,7 +151,7 @@ public class Icon extends ComplexWidget implements HasType<IconType>, HasSize<Ic
 
     @Override
     public void setSize(final IconSize iconSize) {
-        StyleHelper.addUniqueEnumStyleName(this, IconSize.class, iconSize);
+        StyleHelper.addUniqueEnumStyleName(this, IconSize.values(), iconSize);
     }
 
     @Override
@@ -161,7 +161,7 @@ public class Icon extends ComplexWidget implements HasType<IconType>, HasSize<Ic
 
     @Override
     public void setEmphasis(final Emphasis emphasis) {
-        StyleHelper.addUniqueEnumStyleName(this, Emphasis.class, emphasis);
+        StyleHelper.addUniqueEnumStyleName(this, Emphasis.values(), emphasis);
     }
 
     @Override

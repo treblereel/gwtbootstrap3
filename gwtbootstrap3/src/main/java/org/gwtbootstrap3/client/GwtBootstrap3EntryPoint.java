@@ -20,51 +20,50 @@ package org.gwtbootstrap3.client;
  * #L%
  */
 
-import jsinterop.annotations.JsMethod;
+import elemental2.dom.DomGlobal;
+import elemental2.dom.HTMLLinkElement;
+import jsinterop.base.Js;
 import org.gwtproject.core.client.EntryPoint;
 import org.gwtproject.core.client.ScriptInjector;
+import org.gwtproject.dom.client.StyleInjector;
 
 /**
  * Provides script injection for jQuery and boostrap if they aren't already loaded.
- * 
  * @author Sven Jacobs
  * @author Steven Jardine
  */
 public class GwtBootstrap3EntryPoint implements EntryPoint {
 
     /**
-     * Check to see if Bootstrap is loaded already.
-     * 
-     * @return true is Bootstrap loaded, false otherwise.
+     * {@inheritDoc}
      */
-    @JsMethod
-    private static native boolean isBootstrapLoaded();
-
-    /**
-     * Check to see if jQuery is loaded already
-     *
-     * @return true is jQuery is loaded, false otherwise
-     */
-    @JsMethod
-    private static native boolean isjQueryLoaded();
-
-    /** {@inheritDoc} */
     @Override
     public void onModuleLoad() {
+
         ScriptInjector.fromString(GwtBootstrap3ClientBundle.INSTANCE.gwtBootstrap3().getText())
                 .setWindow(ScriptInjector.TOP_WINDOW)
                 .inject();
+
         if (!isjQueryLoaded()) {
             ScriptInjector.fromString(GwtBootstrap3ClientBundle.INSTANCE.jQuery().getText())
                     .setWindow(ScriptInjector.TOP_WINDOW)
                     .inject();
         }
-
-        if (!isBootstrapLoaded()) {
-            ScriptInjector.fromString(GwtBootstrap3ClientBundle.INSTANCE.bootstrap().getText())
+        ScriptInjector.fromString(GwtBootstrap3ClientBundle.INSTANCE.bootstrap().getText())
                 .setWindow(ScriptInjector.TOP_WINDOW)
                 .inject();
-        }
+
+        StyleInjector.injectStylesheet(GwtBootstrap3ClientBundle.INSTANCE.bootstrap_css().getText());
+        StyleInjector.injectStylesheet(GwtBootstrap3ClientBundle.INSTANCE.bootstrap_theme_css().getText());
+
+        HTMLLinkElement fontawesome = (HTMLLinkElement) DomGlobal.document.createElement("link");
+        fontawesome.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
+        fontawesome.rel = "stylesheet";
+
+        DomGlobal.document.head.appendChild(fontawesome);
     }
-    
+
+    private boolean isjQueryLoaded() {
+        return Js.global().has("jQuery");
+    }
 }

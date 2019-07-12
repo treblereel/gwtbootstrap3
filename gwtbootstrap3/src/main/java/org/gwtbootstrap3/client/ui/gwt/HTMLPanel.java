@@ -166,7 +166,7 @@ public class HTMLPanel extends org.gwtproject.user.client.ui.HTMLPanel implement
      */
     @Override
     public void setContextualBackground(ContextualBackground contextualBackground) {
-        StyleHelper.addUniqueEnumStyleName(this, ContextualBackground.class, contextualBackground);
+        StyleHelper.addUniqueEnumStyleName(this, ContextualBackground.values(), contextualBackground);
     }
 
     /**

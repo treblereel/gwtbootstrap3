@@ -359,7 +359,7 @@ public class SuggestBox extends org.gwtproject.user.client.ui.SuggestBox impleme
     /** {@inheritDoc} */
     @Override
     public void setSize(final InputSize size) {
-        StyleHelper.addUniqueEnumStyleName(this, InputSize.class, size);
+        StyleHelper.addUniqueEnumStyleName(this, InputSize.values(), size);
     }
 
     @Override

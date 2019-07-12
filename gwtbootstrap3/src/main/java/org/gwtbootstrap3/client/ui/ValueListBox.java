@@ -125,7 +125,7 @@ public class ValueListBox<T> extends org.gwtproject.user.client.ui.ValueListBox<
     /** {@inheritDoc} */
     @Override
     public void setSize(InputSize size) {
-        StyleHelper.addUniqueEnumStyleName(this, InputSize.class, size);
+        StyleHelper.addUniqueEnumStyleName(this, InputSize.values(), size);
     }
 
     /** {@inheritDoc} */

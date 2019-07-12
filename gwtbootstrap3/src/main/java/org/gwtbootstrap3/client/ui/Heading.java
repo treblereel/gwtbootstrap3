@@ -162,7 +162,7 @@ public class Heading extends ComplexWidget implements HasWidgets, HasText, HasEm
      */
     @Override
     public void setEmphasis(final Emphasis emphasis) {
-        StyleHelper.addUniqueEnumStyleName(this, Emphasis.class, emphasis);
+        StyleHelper.addUniqueEnumStyleName(this, Emphasis.values(), emphasis);
     }
 
     /**
@@ -178,7 +178,7 @@ public class Heading extends ComplexWidget implements HasWidgets, HasText, HasEm
      */
     @Override
     public void setAlignment(final Alignment alignment) {
-        StyleHelper.addUniqueEnumStyleName(this, Alignment.class, alignment);
+        StyleHelper.addUniqueEnumStyleName(this, Alignment.values(), alignment);
     }
 
     /**

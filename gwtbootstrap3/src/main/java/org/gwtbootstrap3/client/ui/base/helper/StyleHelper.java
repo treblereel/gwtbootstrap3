@@ -20,66 +20,49 @@ package org.gwtbootstrap3.client.ui.base.helper;
  * #L%
  */
 
-import elemental2.dom.DomGlobal;
-import org.gwtbootstrap3.client.ui.constants.ButtonType;
 import org.gwtbootstrap3.client.ui.constants.DeviceSize;
 import org.gwtbootstrap3.client.ui.constants.Responsiveness;
-
 import org.gwtproject.dom.client.Style;
 import org.gwtproject.user.client.ui.UIObject;
 
 /**
  * Helper methods regarding CSS styling of UIObjects.
- *
  * @author Sven Jacobs
  * @author Joshua Godi
  */
 public final class StyleHelper {
 
+    private StyleHelper() {
+    }
+
     /**
      * Convenience method for first removing all enum style constants and then adding the single one.
-     *
      * @see #removeEnumStyleNames(org.gwtproject.user.client.ui.UIObject, Class)
      * @see #addEnumStyleName(org.gwtproject.user.client.ui.UIObject, org.gwtproject.dom.client.Style.HasCssName)
      */
-    public static <E extends Style.HasCssName, F extends Enum<? extends Style.HasCssName>> void addUniqueEnumStyleName(final UIObject uiObject,
-                                                                                                                       final Class<F> enumClass,
-                                                                                                                       final E style) {
-        removeEnumStyleNames(uiObject, enumClass);
+    public static void addUniqueEnumStyleName(UIObject uiObject, Style.HasCssName[] values, Style.HasCssName style) {
+        removeEnumStyleNames(uiObject, values);
         addEnumStyleName(uiObject, style);
     }
 
     /**
      * Removes all CSS style names specified by an enum that implements {@link Style.HasCssName} from an UIObject.
-     *
-     * @param uiObject  Object to remove CSS class names from
+     * @param uiObject Object to remove CSS class names from
      * @param enumClass Enum representing CSS class names
-     * @param <E>       Enum type implementing {@link Style.HasCssName}
+     * @param <E> Enum type implementing {@link Style.HasCssName}
      */
-    public static <E extends Enum<? extends Style.HasCssName>> void removeEnumStyleNames(final UIObject uiObject,
-                                                                                         Class<E> enumClass) {
-        for (ButtonType value : ButtonType.values()) {
-            DomGlobal.console.log(" ? " + value.getCssName() + " " + value.name());
-        }
-
-
-        DomGlobal.console.log("removeEnumStyleNames " + uiObject.toString());
-        //DomGlobal.console.log("removeEnumStyleNames 2 " + enumClass == null);
-        //DomGlobal.console.log("removeEnumStyleNames 3 " + enumClass.getCanonicalName());
-        //DomGlobal.console.log("removeEnumStyleNames 4 " + enumClass.getEnumConstants());
-
-/*        for (final String cssClass : styles) {
-            if (cssClass != null && !cssClass.isEmpty()) {
-                uiObject.removeStyleName(cssClass);
+    public static void removeEnumStyleNames(final UIObject uiObject, Style.HasCssName[] values) {
+        for (Style.HasCssName value : values) {
+            if (value != null && value.getCssName() != null && !value.getCssName().isEmpty()) {
+                uiObject.removeStyleName(value.getCssName());
             }
-        }*/
+        }
     }
 
     /**
      * Adds enum value style name to UIObject unless style is {@code null}.
-     *
      * @param uiObject Object to add style to
-     * @param style    Style name
+     * @param style Style name
      */
     public static <E extends Style.HasCssName> void addEnumStyleName(final UIObject uiObject,
                                                                      final E style) {
@@ -91,13 +74,11 @@ public final class StyleHelper {
 
     /**
      * Removes enum value style name from UIObject unless style is {@code null}.
-     *
      * @param uiObject Object to remove style from
-     * @param style    Style name
+     * @param style Style name
      */
     public static <E extends Style.HasCssName> void removeEnumStyleName(final UIObject uiObject,
                                                                         final E style) {
-
         if (style != null && style.getCssName() != null && !style.getCssName().isEmpty()) {
             uiObject.removeStyleName(style.getCssName());
         }
@@ -105,9 +86,8 @@ public final class StyleHelper {
 
     /**
      * Returns {@code true} if specified style is contained in space-separated list of styles
-     *
      * @param styleNames Space-separated list of styles
-     * @param style      Style to look for
+     * @param style Style to look for
      * @return True if contains style
      */
     public static boolean containsStyle(final String styleNames,
@@ -130,10 +110,9 @@ public final class StyleHelper {
 
     /**
      * Toggles a style name on a ui object
-     *
-     * @param uiObject    Object to toggle style on
+     * @param uiObject Object to toggle style on
      * @param toggleStyle whether or not to toggle the style name on the object
-     * @param styleName   Style name
+     * @param styleName Style name
      */
     public static void toggleStyleName(final UIObject uiObject,
                                        final boolean toggleStyle,
@@ -147,8 +126,7 @@ public final class StyleHelper {
 
     /**
      * Sets the ui object to be hidden on the device size
-     *
-     * @param uiObject   object to be hidden on the device size
+     * @param uiObject object to be hidden on the device size
      * @param deviceSize device size
      */
     public static void setHiddenOn(final UIObject uiObject,
@@ -184,8 +162,7 @@ public final class StyleHelper {
 
     /**
      * Sets the ui object to be visible on the device size
-     *
-     * @param uiObject   object to be visible on the device size
+     * @param uiObject object to be visible on the device size
      * @param deviceSize device size
      */
     public static void setVisibleOn(final UIObject uiObject,
@@ -219,6 +196,4 @@ public final class StyleHelper {
         }
     }
 
-    private StyleHelper() {
-    }
 }

@@ -60,7 +60,7 @@ public class ListGroupItem extends ComplexWidget implements HasType<ListGroupIte
 
     @Override
     public void setType(final ListGroupItemType type) {
-        StyleHelper.addUniqueEnumStyleName(this, ListGroupItemType.class, type);
+        StyleHelper.addUniqueEnumStyleName(this, ListGroupItemType.values(), type);
     }
 
     @Override

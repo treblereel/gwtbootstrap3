@@ -74,7 +74,7 @@ public class IconStack extends ComplexPanel implements HasSize<IconSize>, HasRes
 
     @Override
     public void setSize(IconSize size) {
-        StyleHelper.addUniqueEnumStyleName(this, IconSize.class, size);
+        StyleHelper.addUniqueEnumStyleName(this, IconSize.values(), size);
     }
 
     @Override

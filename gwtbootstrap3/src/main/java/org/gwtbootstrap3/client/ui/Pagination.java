@@ -50,7 +50,7 @@ public class Pagination extends UnorderedList implements HasResponsiveness, HasP
 
     @Override
     public void setPaginationSize(final PaginationSize paginationSize) {
-        StyleHelper.addUniqueEnumStyleName(this, PaginationSize.class, paginationSize);
+        StyleHelper.addUniqueEnumStyleName(this, PaginationSize.values(), paginationSize);
     }
 
     @Override

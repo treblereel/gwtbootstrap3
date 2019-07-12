@@ -80,7 +80,7 @@ public abstract class AbstractButtonGroup extends FlowPanel implements HasName, 
 
     @Override
     public void setSize(ButtonGroupSize size) {
-        StyleHelper.addUniqueEnumStyleName(this, ButtonGroupSize.class, size);
+        StyleHelper.addUniqueEnumStyleName(this, ButtonGroupSize.values(), size);
     }
 
     @Override

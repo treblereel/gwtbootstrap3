@@ -249,7 +249,7 @@ public class RadioButton extends Radio implements HasActive,
 
     @Override
     public void setSize(ButtonSize size) {
-        StyleHelper.addUniqueEnumStyleName(this, ButtonSize.class, size);
+        StyleHelper.addUniqueEnumStyleName(this, ButtonSize.values(), size);
     }
 
     @Override
@@ -259,7 +259,7 @@ public class RadioButton extends Radio implements HasActive,
 
     @Override
     public void setType(ButtonType type) {
-        StyleHelper.addUniqueEnumStyleName(this, ButtonType.class, type);
+        StyleHelper.addUniqueEnumStyleName(this, ButtonType.values(), type);
     }
 
     @Override

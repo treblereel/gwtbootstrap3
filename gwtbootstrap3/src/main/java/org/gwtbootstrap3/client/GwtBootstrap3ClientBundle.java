@@ -22,13 +22,11 @@ package org.gwtbootstrap3.client;
 
 
 import org.gwtproject.resources.client.ClientBundle;
-import org.gwtproject.resources.client.Resource;
 import org.gwtproject.resources.client.TextResource;
 
 /**
  * @author Sven Jacobs
  */
-@Resource
 public interface GwtBootstrap3ClientBundle extends ClientBundle {
 
     GwtBootstrap3ClientBundle INSTANCE = new GwtBootstrap3ClientBundleImpl();
@@ -40,4 +38,11 @@ public interface GwtBootstrap3ClientBundle extends ClientBundle {
 
     @Source("resource/js/bootstrap-3.4.0.min.cache.js")
     TextResource bootstrap();
+
+    @Source("resource/css/bootstrap-3.4.0.min.cache.css")
+    TextResource bootstrap_css();
+
+    @Source("resource/css/bootstrap-theme-3.4.0.min.cache.css")
+    TextResource bootstrap_theme_css();
+
 }

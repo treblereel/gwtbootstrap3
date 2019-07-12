@@ -46,7 +46,7 @@ public class Form extends AbstractForm implements HasType<FormType> {
 
     @Override
     public void setType(final FormType type) {
-        StyleHelper.addUniqueEnumStyleName(this, FormType.class, type);
+        StyleHelper.addUniqueEnumStyleName(this, FormType.values(), type);
     }
 
     @Override

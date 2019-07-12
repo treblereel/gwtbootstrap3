@@ -120,7 +120,7 @@ public class Modal extends Div implements IsClosable {
     }
 
     public void setSize(ModalSize size) {
-        StyleHelper.addUniqueEnumStyleName(dialog, ModalSize.class, size);
+        StyleHelper.addUniqueEnumStyleName(dialog, ModalSize.values(), size);
     }
 
     @Override
