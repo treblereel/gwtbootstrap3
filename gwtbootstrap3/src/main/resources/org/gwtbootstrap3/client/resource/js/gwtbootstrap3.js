@@ -1,5 +1,4 @@
 /*
- * #%L
  * GwtBootstrap3
  * %%
  * Copyright (C) 2013 - 2015 GwtBootstrap3

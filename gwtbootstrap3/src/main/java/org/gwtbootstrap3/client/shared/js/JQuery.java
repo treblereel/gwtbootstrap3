@@ -107,6 +107,14 @@ public class JQuery {
     public native JQuery collapse(String method);
 
     /**
+     * Description: Merge the contents of two or more objects together into the first object.
+     * @param target An object that will receive the new properties if additional objects are passed in or that will extend the jQuery namespace if it is the sole argument.
+     * @param object1 An object containing additional properties to merge in.
+     * @return
+     */
+    public native void extend(Object target, Object... object1);
+
+    /**
      * Bootstrap modal() method
      * @param method the method string
      * @return JQuery object for chaining purposes
