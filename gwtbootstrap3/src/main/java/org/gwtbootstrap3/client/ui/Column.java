@@ -25,14 +25,12 @@ import org.gwtbootstrap3.client.ui.constants.ColumnPull;
 import org.gwtbootstrap3.client.ui.constants.ColumnPush;
 import org.gwtbootstrap3.client.ui.constants.ColumnSize;
 import org.gwtbootstrap3.client.ui.html.Div;
-
 import org.gwtproject.dom.client.Style;
 import org.gwtproject.uibinder.client.UiConstructor;
 import org.gwtproject.user.client.ui.Widget;
 
 /**
  * A column of Bootstrap's fluid grid system.
- *
  * @author Sven Jacobs
  * @author Joshua Godi
  * @author Pontus Enmark
@@ -47,9 +45,8 @@ public class Column extends Div {
      * <p/>
      * Additional sizes can be added with {@link #addSize(ColumnSize...)}.
      * Additional widgets can be added with {@link #add(Widget)}.
-     *
-     * @param size         Size of column
-     * @param firstWidget  Widget to add
+     * @param size Size of column
+     * @param firstWidget Widget to add
      * @param otherWidgets Other widgets to add
      */
     public Column(final ColumnSize size, final Widget firstWidget, final Widget... otherWidgets) {
@@ -65,8 +62,7 @@ public class Column extends Div {
      * Creates column with one or more additional sizes.
      * <p/>
      * Additional sizes can be added with {@link #addSize(ColumnSize...)}
-     *
-     * @param firstSize  Size of column
+     * @param firstSize Size of column
      * @param otherSizes Other sizes of column
      * @see #addSize(ColumnSize...)
      */
@@ -80,7 +76,6 @@ public class Column extends Div {
      * <p/>
      * Size needs to be a space-separated String of {@link ColumnSize} enum
      * names, e.g. "SM_3 LG_3"
-     *
      * @param size Space-separated String of {@link ColumnSize}
      * @see ColumnSize
      */
@@ -91,77 +86,76 @@ public class Column extends Div {
 
     /**
      * Adds one or more additional column sizes.
-     *
-     * @param firstSize  Column size
+     * @param firstSize Column size
      * @param otherSizes Additional column sizes
      */
     public void setSize(final ColumnSize firstSize, final ColumnSize... otherSizes) {
-        addEnumVarargsValues(new ColumnSize[]{firstSize}, ColumnSize.class, true);
-        addEnumVarargsValues(otherSizes, ColumnSize.class, false);
+        addEnumVarargsValues(new ColumnSize[]{firstSize}, ColumnSize.values(), true);
+        addEnumVarargsValues(otherSizes, ColumnSize.values(), false);
     }
 
     public void setSize(final String sizes) {
-        addEnumStringValues(sizes, ColumnSize.class, true);
+        addEnumStringValues(sizes, ColumnSize.values(), true);
     }
 
     public void addSize(final ColumnSize... sizes) {
-        addEnumVarargsValues(sizes, ColumnSize.class, false);
+        addEnumVarargsValues(sizes, ColumnSize.values(), false);
     }
 
     public void addSize(final String sizes) {
-        addEnumStringValues(sizes, ColumnSize.class, false);
+        addEnumStringValues(sizes, ColumnSize.values(), false);
     }
 
     public void setPull(final ColumnPull... pulls) {
-        addEnumVarargsValues(pulls, ColumnPull.class, true);
+        addEnumVarargsValues(pulls, ColumnPull.values(), true);
     }
 
     public void setPull(final String pulls) {
-        addEnumStringValues(pulls, ColumnPull.class, true);
+        addEnumStringValues(pulls, ColumnPull.values(), true);
     }
 
     public void addPull(final ColumnPull... pulls) {
-        addEnumVarargsValues(pulls, ColumnPull.class, false);
+        addEnumVarargsValues(pulls, ColumnPull.values(), false);
     }
 
     public void addPull(final String pulls) {
-        addEnumStringValues(pulls, ColumnPull.class, false);
+        addEnumStringValues(pulls, ColumnPull.values(), false);
     }
 
     public void setPush(final ColumnPush... pushes) {
-        addEnumVarargsValues(pushes, ColumnPush.class, true);
+        addEnumVarargsValues(pushes, ColumnPush.values(), true);
     }
 
     public void setPush(final String pushes) {
-        addEnumStringValues(pushes, ColumnPush.class, true);
+        addEnumStringValues(pushes, ColumnPush.values(), true);
     }
 
     public void addPush(final ColumnPush... pushes) {
-        addEnumVarargsValues(pushes, ColumnPush.class, false);
+        addEnumVarargsValues(pushes, ColumnPush.values(), false);
     }
 
     public void addPush(final String pushes) {
-        addEnumStringValues(pushes, ColumnPush.class, false);
+        addEnumStringValues(pushes, ColumnPush.values(), false);
     }
 
     public void setOffset(final ColumnOffset... offsets) {
-        addEnumVarargsValues(offsets, ColumnOffset.class, true);
+        addEnumVarargsValues(offsets, ColumnOffset.values(), true);
     }
 
     public void setOffset(final String offsets) {
-        addEnumStringValues(offsets, ColumnOffset.class, true);
+        addEnumStringValues(offsets, ColumnOffset.values(), true);
     }
 
     public void addOffset(final ColumnOffset... offsets) {
-        addEnumVarargsValues(offsets, ColumnOffset.class, false);
+        addEnumVarargsValues(offsets, ColumnOffset.values(), false);
     }
 
     public void addOffset(final String offsets) {
-        addEnumStringValues(offsets, ColumnOffset.class, false);
+        addEnumStringValues(offsets, ColumnOffset.values(), false);
     }
 
     private <E extends Enum<? extends Style.HasCssName>> void addEnumVarargsValues(final E[] values,
-                                                                                   final Class<E> enumClass,
+                                                                                   final Style.HasCssName[] enumClass,
                                                                                    final boolean clearOld) {
         if (clearOld) {
             // Remove the previous values
@@ -173,9 +167,9 @@ public class Column extends Div {
         }
     }
 
-    private <E extends Enum<? extends Style.HasCssName>> void addEnumStringValues(final String values,
-                                                                                  final Class<E> enumClass,
-                                                                                  final boolean clearOld) {
+    private void addEnumStringValues(final String values,
+                                     final Style.HasCssName[] enumClass,
+                                     final boolean clearOld) {
         if (clearOld) {
             // Remove the previous values
             removeStyleNames(enumClass);
@@ -184,17 +178,19 @@ public class Column extends Div {
         // Add new ones
         final String[] valuesSplit = values.split(SEPARATOR);
         for (final String value : valuesSplit) {
-            for (final E constant : enumClass.getEnumConstants()) {
-                if (value.equalsIgnoreCase(constant.name())) {
-                    addStyleName(((Style.HasCssName) constant).getCssName());
+            for (Style.HasCssName css : enumClass) {
+                if (css.getCssName().equalsIgnoreCase(value)) {
+                    addStyleName(css.getCssName());
                 }
             }
         }
     }
 
-    private <E extends Enum<? extends Style.HasCssName>> void removeStyleNames(final Class<E> enumClass) {
-        for (final E constant : enumClass.getEnumConstants()) {
-            removeStyleName(((Style.HasCssName) constant).getCssName());
+    private void removeStyleNames(final Style.HasCssName[] values) {
+        for (Style.HasCssName value : values) {
+            if (value != null && value.getCssName() != null && !value.getCssName().isEmpty()) {
+                removeStyleName(value.getCssName());
+            }
         }
     }
 }
