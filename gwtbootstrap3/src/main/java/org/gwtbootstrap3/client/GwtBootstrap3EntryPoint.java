@@ -9,9 +9,9 @@ package org.gwtbootstrap3.client;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -40,6 +40,14 @@ public class GwtBootstrap3EntryPoint implements EntryPoint {
     @Override
     public void onModuleLoad() {
 
+        StyleInjector.injectStylesheetAtEnd(GwtBootstrap3ClientBundle.INSTANCE.bootstrap_css().getText());
+
+        HTMLLinkElement fontawesome = (HTMLLinkElement) DomGlobal.document.createElement("link");
+        fontawesome.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
+        fontawesome.rel = "stylesheet";
+
+        DomGlobal.document.head.appendChild(fontawesome);
+
         ScriptInjector.fromString(GwtBootstrap3ClientBundle.INSTANCE.gwtBootstrap3().getText())
                 .setWindow(ScriptInjector.TOP_WINDOW)
                 .inject();
@@ -52,15 +60,6 @@ public class GwtBootstrap3EntryPoint implements EntryPoint {
         ScriptInjector.fromString(GwtBootstrap3ClientBundle.INSTANCE.bootstrap().getText())
                 .setWindow(ScriptInjector.TOP_WINDOW)
                 .inject();
-
-        StyleInjector.injectStylesheet(GwtBootstrap3ClientBundle.INSTANCE.bootstrap_css().getText());
-        StyleInjector.injectStylesheet(GwtBootstrap3ClientBundle.INSTANCE.bootstrap_theme_css().getText());
-
-        HTMLLinkElement fontawesome = (HTMLLinkElement) DomGlobal.document.createElement("link");
-        fontawesome.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
-        fontawesome.rel = "stylesheet";
-
-        DomGlobal.document.head.appendChild(fontawesome);
     }
 
     private boolean isjQueryLoaded() {
