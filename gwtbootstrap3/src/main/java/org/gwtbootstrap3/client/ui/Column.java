@@ -9,9 +9,9 @@ package org.gwtbootstrap3.client.ui;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -179,7 +179,7 @@ public class Column extends Div {
         final String[] valuesSplit = values.split(SEPARATOR);
         for (final String value : valuesSplit) {
             for (Style.HasCssName css : enumClass) {
-                if (css.getCssName().equalsIgnoreCase(value)) {
+                if (css.toString().equalsIgnoreCase(value)) {
                     addStyleName(css.getCssName());
                 }
             }
