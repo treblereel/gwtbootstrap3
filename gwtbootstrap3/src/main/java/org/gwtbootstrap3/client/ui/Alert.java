@@ -240,11 +240,11 @@ public class Alert extends Div implements HasWidgets, HasText, HasType<AlertType
 
     // @formatter:off
     private void alert(final Element e, final String arg) {
-        JQuery.jQuery(e).alert(arg);
+        JQuery.$(e).alert(arg);
     }
 
     private void bindJavaScriptEvents(final Element e) {
-        JQuery alert = JQuery.jQuery(e);
+        JQuery alert = JQuery.$(e);
 
         alert.on("close.bs.alert", (evt) -> {
             onClose(evt);
@@ -256,7 +256,7 @@ public class Alert extends Div implements HasWidgets, HasText, HasType<AlertType
     }
 
     private void unbindJavaScriptEvents(final Element e) {
-        JQuery.jQuery(e).off("close.bs.alert");
-        JQuery.jQuery(e).off("closed.bs.alert");
+        JQuery.$(e).off("close.bs.alert");
+        JQuery.$(e).off("closed.bs.alert");
     }
 }

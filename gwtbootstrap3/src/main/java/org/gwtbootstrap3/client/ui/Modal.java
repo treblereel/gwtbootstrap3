@@ -20,6 +20,7 @@ package org.gwtbootstrap3.client.ui;
  * #L%
  */
 
+import jsinterop.base.JsPropertyMap;
 import org.gwtbootstrap3.client.shared.event.ModalHiddenEvent;
 import org.gwtbootstrap3.client.shared.event.ModalHiddenHandler;
 import org.gwtbootstrap3.client.shared.event.ModalHideEvent;
@@ -314,7 +315,7 @@ public class Modal extends Div implements IsClosable {
     }
 
     private void bindJavaScriptEvents(final Element e) {
-        JQuery modal = JQuery.jQuery(e);
+        JQuery modal = JQuery.$(e);
 
         modal.on("show.bs.modal", (evt) -> {
             onShow(evt);
@@ -334,17 +335,17 @@ public class Modal extends Div implements IsClosable {
     }
 
     private void modal(final Element e, final String arg) {
-        JQuery.jQuery(e).modal(arg);
+        JQuery.$(e).modal(arg);
     }
 
     // Will iterate over all the modals, if they are visible it will hide them
     private void hideOtherModals() {
-        JQuery.jQuery(".modal.in").modal("hide");
+        JQuery.$(".modal.in").modal("hide");
     }
 
     // Unbinds all the handlers
     private void unbindAllHandlers(final Element e) {
-        JQuery je = JQuery.jQuery(e);
+        JQuery je = JQuery.$(e);
         je.off("show.bs.modal");
         je.off("shown.bs.modal");
         je.off("hide.bs.modal");

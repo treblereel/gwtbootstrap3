@@ -112,7 +112,7 @@ public class Popover extends AbstractTooltip {
      * @param arg the arg
      */
     private void call(final Element e, final String arg) {
-        JQuery.jQuery(e).popover(arg);
+        JQuery.$(e).popover(arg);
     }
 
     /** {@inheritDoc} */
@@ -145,7 +145,7 @@ public class Popover extends AbstractTooltip {
      */
     private void popover(Element e, String content) {
         e.setAttribute("data-content", content);
-        JQuery.jQuery(e).popover();
+        JQuery.$(e).popover();
     }
 
     /**
@@ -171,7 +171,7 @@ public class Popover extends AbstractTooltip {
      * @param e the popover {@link Element}.
      */
     private void updateTitleWhenShowing(Element e) {
-        JQuery.jQuery(e).popover("fixTitle").popover("show");
+        JQuery.$(e).popover("fixTitle").popover("show");
     };
 
 }

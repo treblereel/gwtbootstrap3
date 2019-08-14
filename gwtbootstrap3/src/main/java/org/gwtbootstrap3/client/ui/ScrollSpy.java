@@ -143,6 +143,6 @@ public class ScrollSpy {
     private static native void init(final Element e, final String target);
 
     private void refresh(final Element e) {
-        JQuery.jQuery(e).scrollspy("refresh");
+        JQuery.$(e).scrollspy("refresh");
     }
 }

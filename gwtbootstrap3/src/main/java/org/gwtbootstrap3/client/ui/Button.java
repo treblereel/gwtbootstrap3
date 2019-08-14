@@ -20,6 +20,8 @@ package org.gwtbootstrap3.client.ui;
  * #L%
  */
 
+import jsinterop.annotations.JsConstructor;
+import jsinterop.annotations.JsType;
 import org.gwtbootstrap3.client.ui.base.button.AbstractToggleButton;
 import org.gwtbootstrap3.client.ui.constants.IconType;
 
@@ -50,6 +52,7 @@ public class Button extends AbstractToggleButton {
      * Creates button with DEFAULT type.
      */
     public Button() {
+        super();
     }
 
     /**
@@ -58,6 +61,7 @@ public class Button extends AbstractToggleButton {
      * @param text Text contents of button
      */
     public Button(final String text) {
+        super();
         setText(text);
     }
 

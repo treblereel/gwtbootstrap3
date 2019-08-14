@@ -71,7 +71,7 @@ public abstract class AbstractForm extends FormElementContainer implements FormP
          */
         public static Type<SubmitCompleteHandler> getType() {
             if (TYPE == null) {
-                TYPE = new Type<SubmitCompleteHandler>();
+                TYPE = new Type<>();
             }
             return TYPE;
         }
@@ -140,7 +140,7 @@ public abstract class AbstractForm extends FormElementContainer implements FormP
          */
         public static Type<SubmitHandler> getType() {
             if (TYPE == null) {
-                TYPE = new Type<SubmitHandler>();
+                TYPE = new Type<>();
             }
             return TYPE;
         }
@@ -207,10 +207,10 @@ public abstract class AbstractForm extends FormElementContainer implements FormP
 
     interface IFrameTemplate extends SafeHtmlTemplates {
 
-        IFrameTemplate INSTANCE = null;
+        IFrameTemplate INSTANCE = new AbstractForm_IFrameTemplateImpl();
 
-        @Template("<iframe src=\"javascript:''\" name='{0}' tabindex='-1' title='Form submit helper frame'"
-                + "style='position:absolute;width:0;height:0;border:0'>")
+/*        @Template("<iframe src=\"javascript:''\" name='{0}' tabindex='-1' title='Form submit helper frame'"
+                + "style='position:absolute;width:0;height:0;border:0'>")*/
         SafeHtml get(String name);
     }
 
