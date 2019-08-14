@@ -167,7 +167,7 @@ public class NavbarCollapse extends FlowPanel {
     }
 
     private void bindJavaScriptEvents(final Element e) {
-        JQuery collapse = JQuery.jQuery(e);
+        JQuery collapse = JQuery.$(e);
 
         collapse.on("show.bs.collapse", (evt) -> {
             onShow(evt);
@@ -187,13 +187,13 @@ public class NavbarCollapse extends FlowPanel {
     }
 
     private void unbindJavaScriptEvents(final Element e) {
-        JQuery.jQuery(e).off("show.bs.collapse");
-        JQuery.jQuery(e).off("shown.bs.collapse");
-        JQuery.jQuery(e).off("hide.bs.collapse");
-        JQuery.jQuery(e).off("hidden.bs.collapse");
+        JQuery.$(e).off("show.bs.collapse");
+        JQuery.$(e).off("shown.bs.collapse");
+        JQuery.$(e).off("hide.bs.collapse");
+        JQuery.$(e).off("hidden.bs.collapse");
     }
 
     private void fireMethod(final Element e, final String command) {
-        JQuery.jQuery(e).collapse(command);
+        JQuery.$(e).collapse(command);
     }
 }

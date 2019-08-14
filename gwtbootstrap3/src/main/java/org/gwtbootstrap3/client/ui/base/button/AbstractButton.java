@@ -299,6 +299,6 @@ public abstract class AbstractButton extends ComplexWidget implements HasEnabled
     // @formatter:off
 
     private void button(final Element e, final String arg) {
-        JQuery.jQuery(e).button(arg);
+        JQuery.$(e).button(arg);
     }
 }

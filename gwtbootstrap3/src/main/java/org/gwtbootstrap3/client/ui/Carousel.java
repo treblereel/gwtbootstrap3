@@ -151,7 +151,7 @@ public class Carousel extends Div {
     }
 
     private void bindJavaScriptEvents(final org.gwtproject.dom.client.Element e) {
-        JQuery carousel = JQuery.jQuery(e);
+        JQuery carousel = JQuery.$(e);
 
         carousel.on("slide.bs.carousel", (evt) -> {
             onSlide(evt);
@@ -163,19 +163,20 @@ public class Carousel extends Div {
     }
 
     private void unbindJavaScriptEvents(final org.gwtproject.dom.client.Element e) {
-        JQuery.jQuery(e).off("slide.bs.carousel");
-        JQuery.jQuery(e).off("slid.bs.carousel");
+        JQuery.$(e).off("slide.bs.carousel");
+        JQuery.$(e).off("slid.bs.carousel");
     }
 
-    @JsMethod
-    private static native void carousel(final org.gwtproject.dom.client.Element e, final int interval, final String pause,
-                                 final boolean wrap);
+    private static void carousel(final org.gwtproject.dom.client.Element e, final int interval, final String pause,
+                                 final boolean wrap){
+        JQuery.$(e).carousel(e, interval, pause, wrap);
+    }
 
     private void fireMethod(final org.gwtproject.dom.client.Element e, String method) {
-        JQuery.jQuery(e).carousel(method);
+        JQuery.$(e).carousel(method);
     }
 
     private void fireMethod(final org.gwtproject.dom.client.Element e, int slideNumber) {
-        JQuery.jQuery(e).carousel(slideNumber);
+        JQuery.$(e).carousel(slideNumber);
     }
 }

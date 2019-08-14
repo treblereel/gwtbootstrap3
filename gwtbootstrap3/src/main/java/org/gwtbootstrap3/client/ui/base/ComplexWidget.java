@@ -80,14 +80,14 @@ public class ComplexWidget extends ComplexPanel implements HasId, HasResponsiven
             // Calling DOM.insertChild(container, TEXT_NODE, beforeIndex) will
             // always append the text node at the last position.
             //DOM.insertChild(container, child.getElement(), beforeIndex);
-            Widget beforeWidget = getChildren().size() > beforeIndex + 1 ?
-                    getChildren().get(beforeIndex + 1) : null;
+            Element beforeWidget = container.getChildCount() > beforeIndex + 1 ?
+                    (Element)container.getChild(beforeIndex + 1) : null;
             if (beforeWidget == null) {
                 // Append to last position
                 DOM.appendChild(container, child.getElement());
             } else {
                 // Insert before the node of beforeWidget
-                container.insertBefore(child.getElement(), beforeWidget.getElement());
+                container.insertBefore(child.getElement(), beforeWidget);
             }
         } else {
             DOM.appendChild(container, child.getElement());

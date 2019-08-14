@@ -231,12 +231,12 @@ public class TabListItem extends AnchorListItem implements HasDataTarget {
     }
 
     private void showTab(Element e) {
-        JQuery.jQuery(e).tab("show");
+        JQuery.$(e).tab("show");
     }
 
     // @formatter:off
     private void bindJavaScriptEvents(final Element e) {
-        JQuery tab = JQuery.jQuery(e);
+        JQuery tab = JQuery.$(e);
 
         tab.on("show.bs.tab", (evt) -> {
             onShow(evt);
@@ -248,8 +248,8 @@ public class TabListItem extends AnchorListItem implements HasDataTarget {
     }
 
     private void unbindJavaScriptEvents(final Element e) {
-        JQuery.jQuery(e).off("show.bs.tab");
-        JQuery.jQuery(e).off("shown.bs.tab");
+        JQuery.$(e).off("show.bs.tab");
+        JQuery.$(e).off("shown.bs.tab");
     }
     
 }

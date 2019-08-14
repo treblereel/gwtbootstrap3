@@ -21,32 +21,37 @@ package org.gwtbootstrap3.client.shared.js;
  */
 
 import jsinterop.annotations.JsMethod;
-import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsType;
+import jsinterop.base.JsPropertyMap;
 import org.gwtproject.dom.client.Element;
+
+import static jsinterop.annotations.JsPackage.GLOBAL;
 
 /**
  * jQuery and Bootstrap methods wrapper
  * @author Thiago Ricciardi
  *
  */
-@JsType(isNative=true, namespace=JsPackage.GLOBAL, name="jQuery")
-public class JQuery {
+@JsType(isNative = true)
+public abstract class JQuery {
 
     /**
      * Create a JQuery object
      * @param element the element to jQuerify 
      * @return JQuery object of element
      */
-    @JsMethod(namespace=JsPackage.GLOBAL, name="jQuery")
-    public static native JQuery jQuery(Element element);
+    @JsMethod(namespace = GLOBAL, name = "jQuery")
+    public static native JQuery $(Element element);
     /**
      * Select jQuery elements and create a JQuery object
      * @param selector jQuery selector
      * @return JQuery object of elements selected
      */
-    @JsMethod(namespace=JsPackage.GLOBAL, name="jQuery")
-    public static native JQuery jQuery(String selector);
+    @JsMethod(namespace = GLOBAL, name = "jQuery")
+    public static native JQuery $(String selector);
+
+    @JsMethod(namespace = GLOBAL, name = "jQuery")
+    public static native JQuery $();
 
     /**
      * Bootstrap button() method
@@ -159,4 +164,9 @@ public class JQuery {
      */
     public native JQuery tooltip(String method);
 
+    public native void carousel(Element e, int interval, String pause, boolean wrap);
+
+    public native Object data(String dataTarget);
+
+    public native static boolean isArray(Object obj);
 }

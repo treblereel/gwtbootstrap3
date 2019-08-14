@@ -94,7 +94,7 @@ public class Tooltip extends AbstractTooltip {
      * @param arg the arg
      */
     private void call(final Element e, final String arg) {
-        JQuery.jQuery(e).tooltip(arg);
+        JQuery.$(e).tooltip(arg);
     }
 
     /** {@inheritDoc} */
@@ -119,7 +119,7 @@ public class Tooltip extends AbstractTooltip {
      * Create the tooltip.
      */
     private void tooltip(Element e) {
-        JQuery.jQuery(e).tooltip();
+        JQuery.$(e).tooltip();
     }
 
     /** {@inheritDoc} */
@@ -135,7 +135,7 @@ public class Tooltip extends AbstractTooltip {
      * @param e the tooltip {@link Element}.
      */
     private void updateTitleWhenShowing(Element e) {
-        JQuery.jQuery(e).tooltip("fixTitle").tooltip("show");
+        JQuery.$(e).tooltip("fixTitle").tooltip("show");
     }
 
 }
