@@ -531,13 +531,10 @@ public abstract class AbstractForm extends FormElementContainer implements FormP
     public void setSubmitOnEnter(boolean submitOnEnter) {
         if (submitOnEnter) {
             if (submitOnEnterRegistration == null)
-                submitOnEnterRegistration = addDomHandler(new KeyPressHandler() {
-                    @Override
-                    public void onKeyPress(KeyPressEvent event) {
-                        if (event.getNativeEvent().getKeyCode() == KeyCodes.KEY_ENTER) {
-                            if (validate()) {
-                                fireSubmitEvent();
-                            }
+                submitOnEnterRegistration = addDomHandler(event -> {
+                    if (event.getNativeEvent().getKeyCode() == KeyCodes.KEY_ENTER) {
+                        if (validate()) {
+                            fireSubmitEvent();
                         }
                     }
                 }, KeyPressEvent.getType());

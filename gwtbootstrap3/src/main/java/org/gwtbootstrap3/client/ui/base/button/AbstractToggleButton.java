@@ -39,7 +39,7 @@ import org.gwtproject.dom.client.Element;
  */
 public abstract class AbstractToggleButton extends AbstractIconButton implements HasDataToggle {
 
-    private final DataToggleMixin<AbstractToggleButton> toggleMixin = new DataToggleMixin<AbstractToggleButton>(this);
+    private final DataToggleMixin<AbstractToggleButton> toggleMixin = new DataToggleMixin<>(this);
     private final Text separator = new Text(" ");
     private final Caret caret = new Caret();
 
@@ -73,18 +73,15 @@ public abstract class AbstractToggleButton extends AbstractIconButton implements
         toggleMixin.setDataToggle(toggle);
 
         // We defer to make sure the elements are available to manipulate their position
-        Scheduler.get().scheduleDeferred(new Scheduler.ScheduledCommand() {
-            @Override
-            public void execute() {
-                separator.removeFromParent();
-                caret.removeFromParent();
+        Scheduler.get().scheduleDeferred(() -> {
+            separator.removeFromParent();
+            caret.removeFromParent();
 
-                if (toggle == Toggle.DROPDOWN) {
-                    addStyleName(Styles.DROPDOWN_TOGGLE);
+            if (toggle == Toggle.DROPDOWN) {
+                addStyleName(Styles.DROPDOWN_TOGGLE);
 
-                    add(separator, (Element) getElement());
-                    add(caret, (Element) getElement());
-                }
+                add(separator, (Element) getElement());
+                add(caret, (Element) getElement());
             }
         });
     }

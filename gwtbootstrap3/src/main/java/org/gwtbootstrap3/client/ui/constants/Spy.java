@@ -29,7 +29,7 @@ public enum Spy {
 
     private final String spy;
 
-    private Spy(final String spy) {
+    Spy(final String spy) {
         this.spy = spy;
     }
 

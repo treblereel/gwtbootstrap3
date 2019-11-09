@@ -30,7 +30,7 @@ import org.gwtproject.event.shared.Event;
  */
 public class TooltipHideEvent extends GwtEvent<TooltipHideHandler> implements TooltipEvent {
 
-    private static final Type<TooltipHideHandler> TYPE = new Type<TooltipHideHandler>();
+    private static final Type<TooltipHideHandler> TYPE = new Type<>();
 
     private final Tooltip tooltip;
     private final Event nativeEvent;

@@ -1,5 +1,7 @@
 package org.gwtbootstrap3.client.ui;
 
+import com.google.j2cl.junit.apt.J2clTestInput;
+
 /*
  * #%L
  * GwtBootstrap3
@@ -19,7 +21,7 @@ package org.gwtbootstrap3.client.ui;
  * limitations under the License.
  * #L%
  */
-
+@J2clTestInput(CheckBoxButtonGwt.class)
 public class CheckBoxButtonGwt extends InputToggleButtonGwt {
 
     public void testCheckBoxButton() {

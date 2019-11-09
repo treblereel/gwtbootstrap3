@@ -47,7 +47,7 @@ public class RadioGroupBlankValidatorMixin<W extends RadioGroupBase<V>, V> exten
     /** {@inheritDoc} */
     @Override
     protected BlankValidator<V> createBlankValidator() {
-        return new RadioGroupBlankValidator<V>(getInputWidget());
+        return new RadioGroupBlankValidator<>(getInputWidget());
     }
 
 }

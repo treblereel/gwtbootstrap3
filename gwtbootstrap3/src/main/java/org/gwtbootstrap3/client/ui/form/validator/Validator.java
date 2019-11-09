@@ -36,7 +36,7 @@ public interface Validator<T> {
     /**
      * Represents the priority of a validator.
      */
-    public static class Priority {
+    class Priority {
 
         /** HIGHEST priority */
         public static final int HIGHEST = 0;

@@ -61,7 +61,7 @@ public interface ValidationMessages extends ConstantsWithLookup {
 
     @Retention(RetentionPolicy.RUNTIME)
     @Target(ElementType.METHOD)
-    public @interface Key {
+    @interface Key {
         String value();
     }
 

@@ -20,27 +20,33 @@ package org.gwtbootstrap3.client.ui.base.helper;
  * #L%
  */
 
+import com.google.gwt.junit.client.GWTTestCase;
+import com.google.j2cl.junit.apt.J2clTestInput;
 import org.junit.Test;
 
 import static org.gwtbootstrap3.client.ui.base.helper.StyleHelper.containsStyle;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertEquals;
 
 /**
  * @author Sven Jacobs
  */
-public class StyleHelperTest {
+@J2clTestInput(StyleHelperTest.class)
+public class StyleHelperTest extends GWTTestCase {
 
     @Test
     public void testContainsStyle() {
         final String styleNames = "abc-efg 123 hji-klm";
 
-        assertEquals(containsStyle(styleNames, "abc-efg"), is(true));
-        assertEquals(containsStyle(styleNames, "123"), is(true));
-        assertEquals(containsStyle(styleNames, "hji-klm"), is(true));
-        assertEquals(containsStyle(styleNames, "mno"), is(false));
-        assertEquals(containsStyle(null, "hji-klm"), is(false));
-        assertEquals(containsStyle(styleNames, null), is(false));
-        assertEquals(containsStyle("abc", "abc"), is(true));
+        assertEquals(containsStyle(styleNames, "abc-efg"), true);
+        assertEquals(containsStyle(styleNames, "123"), true);
+        assertEquals(containsStyle(styleNames, "hji-klm"), true);
+        assertEquals(containsStyle(styleNames, "mno"), false);
+        assertEquals(containsStyle(null, "hji-klm"), false);
+        assertEquals(containsStyle(styleNames, null), false);
+        assertEquals(containsStyle("abc", "abc"), true);
+    }
+
+    @Override
+    public String getModuleName() {
+        return null;
     }
 }

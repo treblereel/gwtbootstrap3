@@ -42,8 +42,8 @@ import org.gwtproject.user.client.ui.Widget;
  */
 public abstract class AbstractTextWidget extends Widget implements HasId, HasHTML, HasResponsiveness, HasInlineStyle,
                                                                    IsEditor<LeafValueEditor<String>>, HasPull {
-    private final PullMixin<AbstractTextWidget> pullMixin = new PullMixin<AbstractTextWidget>(this);
-    private final IdMixin<AbstractTextWidget> idMixin = new IdMixin<AbstractTextWidget>(this);
+    private final PullMixin<AbstractTextWidget> pullMixin = new PullMixin<>(this);
+    private final IdMixin<AbstractTextWidget> idMixin = new IdMixin<>(this);
     private LeafValueEditor<String> editor;
 
     protected AbstractTextWidget(final Element element) {

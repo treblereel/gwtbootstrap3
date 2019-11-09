@@ -20,6 +20,8 @@ package org.gwtbootstrap3.client.ui.form.validator;
  * #L%
  */
 
+import com.google.gwt.junit.client.GWTTestCase;
+import com.google.j2cl.junit.apt.J2clTestInput;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -28,7 +30,8 @@ import org.junit.Test;
  * 
  * @author Steven Jardine
  */
-public class MessageFormatTest {
+@J2clTestInput(MessageFormatTest.class)
+public class MessageFormatTest extends GWTTestCase {
 
     /**
      * Test the {@link MessageFormat} class.
@@ -43,4 +46,8 @@ public class MessageFormatTest {
         Assert.assertEquals(MessageFormat.format("{1} {2} {1}", (Object[]) null), "{1} {2} {1}");
     }
 
+    @Override
+    public String getModuleName() {
+        return null;
+    }
 }

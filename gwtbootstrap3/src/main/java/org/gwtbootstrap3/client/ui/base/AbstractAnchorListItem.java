@@ -54,14 +54,8 @@ public abstract class AbstractAnchorListItem extends AbstractListItem implements
      */
     protected AbstractAnchorListItem() {
         anchor = new Anchor();
-        anchor.addClickHandler(new ClickHandler() {
-
-            @Override
-            public void onClick(ClickEvent event) {
-                delegateEvent(AbstractAnchorListItem.this, event);
-            }
-        });
-        add(anchor, (Element) getElement());
+        anchor.addClickHandler(event -> delegateEvent(AbstractAnchorListItem.this, event));
+        add(anchor, getElement());
     }
 
     /** {@inheritDoc} */

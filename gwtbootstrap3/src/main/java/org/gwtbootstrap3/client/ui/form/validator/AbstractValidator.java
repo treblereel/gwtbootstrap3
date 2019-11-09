@@ -39,7 +39,7 @@ public abstract class AbstractValidator<T> implements Validator<T> {
 
     private String messageKey;
 
-    private ValidatorMessageMixin messageMixin;
+    protected ValidatorMessageMixin messageMixin;
 
     private Object[] messageValueArgs;
 
@@ -56,14 +56,37 @@ public abstract class AbstractValidator<T> implements Validator<T> {
     }
 
     /**
+     * Constructor. This overrides all validation message handling. Use this constructor for field specific
+     * custom validation messages.
+     *
+     * @param invalidMessageOverride the invalid message override
+     */
+    public AbstractValidator(String invalidMessageOverride, ValidatorMessageMixin messageMixin) {
+        this(null, new Object[0], messageMixin);
+        assert invalidMessageOverride != null;
+        this.invalidMessageOverride = invalidMessageOverride;
+    }
+
+    /**
      * Constructor. Looks up the message using the messageKey and replacing arguments with messageValueArgs.
      *
      * @param messageKey the message key
      * @param messageValueArgs the message value args
      */
     public AbstractValidator(String messageKey, Object[] messageValueArgs) {
+        this(messageKey, messageValueArgs, new  DefaultValidatorMessageMixin());
+    }
+
+    /**
+     * Constructor. Looks up the message using the messageKey and replacing arguments with messageValueArgs.
+     *
+     * @param messageKey the message key
+     * @param messageValueArgs the message value args
+     */
+    public AbstractValidator(String messageKey, Object[] messageValueArgs, ValidatorMessageMixin messageMixin) {
         this.messageKey = messageKey;
         this.messageValueArgs = messageValueArgs;
+        this.messageMixin = messageMixin;
         assert this.messageValueArgs != null;
     }
 
@@ -76,7 +99,7 @@ public abstract class AbstractValidator<T> implements Validator<T> {
      * @return the list
      */
     public List<EditorError> createErrorList(Editor<T> editor, T value, String messageKey) {
-        List<EditorError> result = new ArrayList<EditorError>();
+        List<EditorError> result = new ArrayList<>();
         result.add(new BasicEditorError(editor, value, getInvalidMessage(messageKey)));
         return result;
     }
@@ -103,7 +126,7 @@ public abstract class AbstractValidator<T> implements Validator<T> {
     /** {@inheritDoc} */
     @Override
     public final List<EditorError> validate(Editor<T> editor, T value) {
-        List<EditorError> result = new ArrayList<EditorError>();
+        List<EditorError> result = new ArrayList<>();
         if (!isValid(value)) {
             result.add(new BasicEditorError(editor, value, getInvalidMessage(messageKey)));
         }

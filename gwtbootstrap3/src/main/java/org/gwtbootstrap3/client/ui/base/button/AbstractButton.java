@@ -96,10 +96,10 @@ public abstract class AbstractButton extends ComplexWidget implements HasEnabled
     }
 
     private final ButtonStateHandler buttonStateHandler = new ButtonStateHandler();
-    private final DataTargetMixin<AbstractButton> targetMixin = new DataTargetMixin<AbstractButton>(this);
-    private final ActiveMixin<AbstractButton> activeMixin = new ActiveMixin<AbstractButton>(this);
-    private final FocusableMixin<AbstractButton> focusableMixin = new FocusableMixin<AbstractButton>(this);
-    private final EnabledMixin<AbstractButton> enabledMixin = new EnabledMixin<AbstractButton>(this);
+    private final DataTargetMixin<AbstractButton> targetMixin = new DataTargetMixin<>(this);
+    private final ActiveMixin<AbstractButton> activeMixin = new ActiveMixin<>(this);
+    private final FocusableMixin<AbstractButton> focusableMixin = new FocusableMixin<>(this);
+    private final EnabledMixin<AbstractButton> enabledMixin = new EnabledMixin<>(this);
 
     /**
      * Creates button with DEFAULT type.
