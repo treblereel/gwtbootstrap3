@@ -227,21 +227,11 @@ public abstract class AbstractTooltip implements IsWidget,
     // @formatter:off
     protected void bindJavaScriptEvents(final Element e) {
         JQuery tooltip = JQuery.$(e);
-        tooltip.on("show." + dataTarget, (evt) -> {
-            onShow(evt);
-        });
-        tooltip.on("shown." + dataTarget, (evt) -> {
-            onShown(evt);
-        });
-        tooltip.on("hide." + dataTarget, (evt) -> {
-            onHide(evt);
-        });
-        tooltip.on("hidden." + dataTarget, (evt) -> {
-            onHidden(evt);
-        });
-        tooltip.on("inserted." + dataTarget, (evt) -> {
-            onInserted(evt);
-        });
+        tooltip.on("show." + dataTarget, (evt) -> onShow(evt));
+        tooltip.on("shown." + dataTarget, (evt) -> onShown(evt));
+        tooltip.on("hide." + dataTarget, (evt) -> onHide(evt));
+        tooltip.on("hidden." + dataTarget, (evt) -> onHidden(evt));
+        tooltip.on("inserted." + dataTarget, (evt) -> onInserted(evt));
     }
 
     protected abstract void call(final String arg);
@@ -588,13 +578,7 @@ public abstract class AbstractTooltip implements IsWidget,
         }
 
         // When we attach it, configure the tooltip
-        widget.addAttachHandler(new AttachEvent.Handler() {
-
-            @Override
-            public void onAttachOrDetach(final AttachEvent event) {
-                init();
-            }
-        });
+        widget.addAttachHandler(event -> init());
     }
 
     /**

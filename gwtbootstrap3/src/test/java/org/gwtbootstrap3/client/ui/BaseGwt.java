@@ -39,7 +39,6 @@ public abstract class BaseGwt extends GWTTestCase {
      *
      * com.google.gwt.junit.client.GWTTestCase#getModuleName()
      */
-    @Override
     public String getModuleName() {
         return "org.gwtbootstrap3.GwtBootstrap3";
     }

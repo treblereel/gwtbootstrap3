@@ -29,7 +29,6 @@ import org.gwtbootstrap3.client.ui.constants.IconSize;
 import org.gwtbootstrap3.client.ui.constants.IconType;
 import org.gwtbootstrap3.client.ui.constants.Toggle;
 
-import org.gwtproject.dom.client.Element;
 import org.gwtproject.event.dom.client.ClickEvent;
 import org.gwtproject.event.dom.client.ClickHandler;
 import org.gwtproject.event.dom.client.HasClickHandlers;
@@ -54,14 +53,8 @@ public abstract class AbstractAnchorListItem extends AbstractListItem implements
      */
     protected AbstractAnchorListItem() {
         anchor = new Anchor();
-        anchor.addClickHandler(new ClickHandler() {
-
-            @Override
-            public void onClick(ClickEvent event) {
-                delegateEvent(AbstractAnchorListItem.this, event);
-            }
-        });
-        add(anchor, (Element) getElement());
+        anchor.addClickHandler(event -> delegateEvent(AbstractAnchorListItem.this, event));
+        add(anchor, getElement());
     }
 
     /** {@inheritDoc} */

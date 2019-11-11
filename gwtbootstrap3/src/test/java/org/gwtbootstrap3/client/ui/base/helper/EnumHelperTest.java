@@ -20,27 +20,32 @@ package org.gwtbootstrap3.client.ui.base.helper;
  * #L%
  */
 
+import com.google.gwt.junit.client.GWTTestCase;
+import com.google.j2cl.junit.apt.J2clTestInput;
 import org.gwtbootstrap3.client.ui.constants.Pull;
 import org.junit.Test;
 
 import static org.gwtbootstrap3.client.ui.base.helper.EnumHelper.fromStyleName;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.nullValue;
-import static org.hamcrest.MatcherAssert.assertThat;
+
 
 /**
  * @author Sven Jacobs
  */
-public class EnumHelperTest {
+public class EnumHelperTest extends GWTTestCase {
 
     @Test
     public void testFromStyleName() {
-        assertThat(fromStyleName("123 pull-left abc", Pull.class, null), is(Pull.LEFT));
-        assertThat(fromStyleName("123 pull-right abc", Pull.class, null), is(Pull.RIGHT));
-        assertThat(fromStyleName("pull-left pull-right abc", Pull.class, null), is(Pull.LEFT));
-        assertThat(fromStyleName("123 abc", Pull.class, null), is(nullValue()));
-        assertThat(fromStyleName("123 abc", Pull.class, Pull.LEFT), is(Pull.LEFT));
-        assertThat(fromStyleName("123 abc", null, null), is(nullValue()));
-        assertThat(fromStyleName(null, Pull.class, null), is(nullValue()));
+        assertEquals(fromStyleName("123 pull-left abc", Pull.class, null), Pull.LEFT);
+        assertEquals(fromStyleName("123 pull-right abc", Pull.class, null), Pull.RIGHT);
+        assertEquals(fromStyleName("pull-left pull-right abc", Pull.class, null), Pull.LEFT);
+        assertEquals(fromStyleName("123 abc", Pull.class, null), null);
+        assertEquals(fromStyleName("123 abc", Pull.class, Pull.LEFT), Pull.LEFT);
+        assertEquals(fromStyleName("123 abc", null, null), null);
+        assertEquals(fromStyleName(null, Pull.class, null), null);
+    }
+
+    @Override
+    public String getModuleName() {
+        return null;
     }
 }

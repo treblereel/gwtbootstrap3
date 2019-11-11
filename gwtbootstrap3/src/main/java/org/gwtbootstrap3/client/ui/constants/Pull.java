@@ -35,7 +35,7 @@ public enum Pull implements Style.HasCssName {
 
     private final String cssClass;
 
-    private Pull(final String cssClass) {
+    Pull(final String cssClass) {
         this.cssClass = cssClass;
     }
 

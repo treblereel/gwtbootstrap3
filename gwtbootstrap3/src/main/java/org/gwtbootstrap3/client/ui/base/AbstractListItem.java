@@ -44,10 +44,10 @@ import org.gwtproject.user.client.ui.HasEnabled;
 public abstract class AbstractListItem extends ComplexWidget implements HasEnabled, HasPull, HasActive,
         HasResponsiveness, HasId {
 
-    private final ActiveMixin<AbstractListItem> activeMixin = new ActiveMixin<AbstractListItem>(this);
-    private final PullMixin<AbstractListItem> pullMixin = new PullMixin<AbstractListItem>(this);
-    private final IdMixin<AbstractListItem> idMixin = new IdMixin<AbstractListItem>(this);
-    private final EnabledMixin<AbstractListItem> enabledMixin = new EnabledMixin<AbstractListItem>(this);
+    private final ActiveMixin<AbstractListItem> activeMixin = new ActiveMixin<>(this);
+    private final PullMixin<AbstractListItem> pullMixin = new PullMixin<>(this);
+    private final IdMixin<AbstractListItem> idMixin = new IdMixin<>(this);
+    private final EnabledMixin<AbstractListItem> enabledMixin = new EnabledMixin<>(this);
 
     protected AbstractListItem() {
         setElement(Document.get().createLIElement());

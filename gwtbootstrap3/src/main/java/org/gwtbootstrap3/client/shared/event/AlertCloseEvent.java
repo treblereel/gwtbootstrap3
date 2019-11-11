@@ -28,7 +28,7 @@ import org.gwtproject.user.client.Event;
  */
 public class AlertCloseEvent extends GwtEvent<AlertCloseHandler> {
 
-    private static final Type<AlertCloseHandler> TYPE = new Type<AlertCloseHandler>();
+    private static final Type<AlertCloseHandler> TYPE = new Type<>();
 
     private final Event nativeEvent;
 

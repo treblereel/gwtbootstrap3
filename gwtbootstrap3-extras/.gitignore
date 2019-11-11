@@ -1,0 +1,10 @@
+target/
+.idea
+*.iml
+*.ipr
+*~
+.classpath
+.project
+.settings/
+out/
+.checkstyle

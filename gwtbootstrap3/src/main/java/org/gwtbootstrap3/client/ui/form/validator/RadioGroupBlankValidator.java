@@ -42,6 +42,7 @@ public class RadioGroupBlankValidator<T> extends BlankValidator<T> {
     public RadioGroupBlankValidator(final RadioGroupBase<T> inputWidget) {
         super();
         this.inputWidget = inputWidget;
+        this.messageMixin = new DefaultValidatorMessageMixin();
     }
 
     /** {@inheritDoc} */

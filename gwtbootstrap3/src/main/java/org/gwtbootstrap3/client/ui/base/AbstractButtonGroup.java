@@ -44,8 +44,8 @@ import org.gwtproject.user.client.ui.Widget;
 public abstract class AbstractButtonGroup extends FlowPanel implements HasName, HasSize<ButtonGroupSize>,
         HasDataToggle, HasJustified, HasPull, HasResponsiveness {
 
-    private final PullMixin<AbstractButtonGroup> pullMixin = new PullMixin<AbstractButtonGroup>(this);
-    private final DataToggleMixin<AbstractButtonGroup> toggleMixin = new DataToggleMixin<AbstractButtonGroup>(this);
+    private final PullMixin<AbstractButtonGroup> pullMixin = new PullMixin<>(this);
+    private final DataToggleMixin<AbstractButtonGroup> toggleMixin = new DataToggleMixin<>(this);
     private String name;
 
     protected AbstractButtonGroup(final String styleName) {

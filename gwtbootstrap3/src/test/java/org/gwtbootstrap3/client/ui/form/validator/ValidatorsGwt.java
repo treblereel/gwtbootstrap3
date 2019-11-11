@@ -28,6 +28,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.google.j2cl.junit.apt.J2clTestInput;
 import org.gwtbootstrap3.client.ui.BaseGwt;
 import org.gwtbootstrap3.client.ui.TextBox;
 import org.gwtbootstrap3.client.ui.form.validator.ValidationChangedEvent.ValidationChangedHandler;
@@ -40,13 +41,14 @@ import org.gwtproject.user.client.Command;
  * 
  * @author Steven Jardine
  */
+//TODO not ready because of I18N
 public class ValidatorsGwt extends BaseGwt {
 
     /**
      * Test the {@link BlankValidator} class.
      */
     public void testBlankValidator() {
-        BlankValidator<String> v = new BlankValidator<String>();
+        BlankValidator<String> v = new BlankValidator<>();
         List<EditorError> errors = v.validate(null, null);
         assertFalse(errors.isEmpty());
         errors = v.validate(null, "");
@@ -82,7 +84,7 @@ public class ValidatorsGwt extends BaseGwt {
      * Test the {@link DecimalMinValidator} class.
      */
     public void testDecimalMinValidator() {
-        DecimalMinValidator<Float> v = new DecimalMinValidator<Float>(1.25f);
+        DecimalMinValidator<Float> v = new DecimalMinValidator<>(1.25f);
         List<EditorError> errors = v.validate(null, null);
         assertTrue(errors.isEmpty());
         errors = v.validate(null, -2.0f);
@@ -104,7 +106,7 @@ public class ValidatorsGwt extends BaseGwt {
 
         field1.setValue("1234");
         field2.setValue(field1.getValue());
-        field2.addValidator(new FieldMatchValidator<String>(field1));
+        field2.addValidator(new FieldMatchValidator<>(field1));
         assertTrue(field2.validate());
 
         field2.setValue("12345");
@@ -260,7 +262,7 @@ public class ValidatorsGwt extends BaseGwt {
         box3.setValue("box3");
         assertTrue(validatorGroup.validate(false));
 
-        validatorGroup.addValidationChangedHandler(new ValidationChangedHandler() {
+/*        validatorGroup.addValidationChangedHandler(new ValidationChangedHandler() {
             @Override
             public void onValidationChanged(ValidationChangedEvent event) {
                 assertFalse(event.isValid());
@@ -274,7 +276,7 @@ public class ValidatorsGwt extends BaseGwt {
             public void execute() {
                 box1.setValue("", true);
             }
-        });
+        });*/
 
     }
 

@@ -169,4 +169,5 @@ public abstract class JQuery {
     public native Object data(String dataTarget);
 
     public native static boolean isArray(Object obj);
+
 }
