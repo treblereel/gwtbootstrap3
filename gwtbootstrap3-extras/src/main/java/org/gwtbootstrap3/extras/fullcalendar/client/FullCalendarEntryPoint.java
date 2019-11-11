@@ -21,7 +21,6 @@ package org.gwtbootstrap3.extras.fullcalendar.client;
  */
 
 import jsinterop.base.Js;
-import org.gwtbootstrap3.extras.JsUtils;
 import org.gwtproject.core.client.EntryPoint;
 import org.gwtproject.core.client.ScriptInjector;
 import org.gwtproject.dom.client.StyleInjector;
@@ -47,8 +46,8 @@ public class FullCalendarEntryPoint implements EntryPoint {
     }
 
     private boolean isCalendarPresent() {
-        if (Js.asPropertyMap(JsUtils.global()).has("jQuery")
-                && Js.asPropertyMap(Js.asPropertyMap(JsUtils.global()).get("jQuery")).has("fullCalendar")) {
+        if (Js.asPropertyMap(Js.global()).has("jQuery")
+                && Js.asPropertyMap(Js.asPropertyMap(Js.global()).get("jQuery")).has("fullCalendar")) {
             return true;
         } else {
             return false;
@@ -56,9 +55,9 @@ public class FullCalendarEntryPoint implements EntryPoint {
     }
 
     private boolean isDragAndResizePresent() {
-        if (Js.asPropertyMap(JsUtils.global()).has("jQuery")
-                && Js.asPropertyMap(Js.asPropertyMap(JsUtils.global()).get("jQuery")).has("draggable")
-                && Js.asPropertyMap(Js.asPropertyMap(JsUtils.global()).get("jQuery")).has("resizable")) {
+        if (Js.asPropertyMap(Js.global()).has("jQuery")
+                && Js.asPropertyMap(Js.asPropertyMap(Js.global()).get("jQuery")).has("draggable")
+                && Js.asPropertyMap(Js.asPropertyMap(Js.global()).get("jQuery")).has("resizable")) {
             return true;
         } else {
             return false;
@@ -66,8 +65,8 @@ public class FullCalendarEntryPoint implements EntryPoint {
     }
 
     private boolean isMomentPresent() {
-        if (Js.asPropertyMap(JsUtils.global()).has("jQuery")
-                && Js.asPropertyMap(Js.asPropertyMap(JsUtils.global()).get("jQuery")).has("moment")) {
+        if (Js.asPropertyMap(Js.global()).has("jQuery")
+                && Js.asPropertyMap(Js.asPropertyMap(Js.global()).get("jQuery")).has("moment")) {
             return true;
         } else {
             return false;

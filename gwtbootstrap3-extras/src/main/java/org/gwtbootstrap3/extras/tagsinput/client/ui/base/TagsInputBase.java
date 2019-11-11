@@ -26,7 +26,6 @@ import java.util.Collection;
 import java.util.List;
 
 import elemental2.core.JsArray;
-import elemental2.dom.DomGlobal;
 import jsinterop.annotations.JsFunction;
 import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
@@ -82,9 +81,12 @@ class TagsInputBase<T> extends Widget implements HasAllTagsInputEvents<T>,
     private Scheduler.ScheduledCommand attachTypeahead = new Scheduler.ScheduledCommand() {
         @Override
         public void execute() {
-            typeahead = new Typeahead<>(input(), datasets);
-            typeahead.reconfigure();
-            typeahead.addTypeaheadSelectedHandler(event -> add(event.getSuggestion().getData()));
+            Element elm = input();
+            if (elm != null) {
+                typeahead = new Typeahead<>(input(), datasets);
+                typeahead.reconfigure();
+                typeahead.addTypeaheadSelectedHandler(event -> add(event.getSuggestion().getData()));
+            }
         }
     };
 
@@ -272,6 +274,7 @@ class TagsInputBase<T> extends Widget implements HasAllTagsInputEvents<T>,
         //
         // Even if firing of ValueChangeEvent is removed, there should remain empty function and 'change' event will be properly cached by GWT.
         ////////////////////
+
         JTagsinput.jQuery(e).on(HasAllTagsInputEvents.ITEM_CHANGED_EVENT, (Fn) (event) -> {
             Object currentValue = JTagsinput.jQuery(e).val();
             if (currentValue != null) {
@@ -294,9 +297,7 @@ class TagsInputBase<T> extends Widget implements HasAllTagsInputEvents<T>,
     @Override
     protected void onLoad() {
         super.onLoad();
-
         initialize(getElement(), options);
-
         // Deferred to make sure the tagsinput component creates <input> field
         // on which typeahead should attach.
         Scheduler.get().scheduleDeferred(attachTypeahead);
@@ -315,7 +316,7 @@ class TagsInputBase<T> extends Widget implements HasAllTagsInputEvents<T>,
      */
     public List<T> getItems() {
         JsArray<JavaScriptObject> js_items = getItems(getElement());
-        List<T> items = new ArrayList<T>();
+        List<T> items = new ArrayList<>();
 
         for (int i = 0; i < js_items.length; i++) {
             @SuppressWarnings("unchecked")
@@ -444,6 +445,13 @@ class TagsInputBase<T> extends Widget implements HasAllTagsInputEvents<T>,
         void onInvoke(Object value);
     }
 
+    @FunctionalInterface
+    @JsFunction
+    private interface FnOnSelect {
+
+        void onInvoke(Object event, String suggestion);
+    }
+
     @JsType(
             isNative = true,
             namespace = JsPackage.GLOBAL,
@@ -461,6 +469,10 @@ class TagsInputBase<T> extends Widget implements HasAllTagsInputEvents<T>,
         public native <T> T tagsinput(Object value);
 
         public native <T> T tagsinput(String getValue, Object value);
+
+        public native void typeahead(String open);
+
+        public native void bind(String s, FnOnSelect fnOnSelect);
 
         public native <T> T val();
     }

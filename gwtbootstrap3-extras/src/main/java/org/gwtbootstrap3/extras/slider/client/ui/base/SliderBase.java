@@ -36,7 +36,6 @@ import org.gwtbootstrap3.client.ui.base.HasResponsiveness;
 import org.gwtbootstrap3.client.ui.base.helper.StyleHelper;
 import org.gwtbootstrap3.client.ui.base.mixin.AttributeMixin;
 import org.gwtbootstrap3.client.ui.constants.DeviceSize;
-import org.gwtbootstrap3.extras.JsUtils;
 import org.gwtbootstrap3.extras.slider.client.ui.base.constants.HandleType;
 import org.gwtbootstrap3.extras.slider.client.ui.base.constants.OrientationType;
 import org.gwtbootstrap3.extras.slider.client.ui.base.constants.ScaleType;
@@ -755,9 +754,7 @@ public abstract class SliderBase<T> extends Widget implements
     }
 
     private boolean isSliderNamespaceBound() {
-        DomGlobal.console.log("check SliderNamespaceBound <- REMOVE IT");
-        boolean check = Js.asPropertyMap(Js.asPropertyMap(JsUtils.global().get("jQuery")).get("fn")).has("slider");
-        DomGlobal.console.log("result " + check);
+        boolean check = Js.asPropertyMap(Js.asPropertyMap(Js.global().get("jQuery")).get("fn")).has("slider");
         return check;
     }
 

@@ -22,7 +22,6 @@ package org.gwtbootstrap3.extras.slider.client;
 
 import elemental2.dom.DomGlobal;
 import jsinterop.base.Js;
-import org.gwtbootstrap3.extras.JsUtils;
 import org.gwtproject.core.client.EntryPoint;
 import org.gwtproject.core.client.ScriptInjector;
 import org.gwtproject.dom.client.StyleInjector;
@@ -45,7 +44,7 @@ public class SliderEntryPoint implements EntryPoint {
      * @return <code>true</code> if slider is loaded, <code>false</code> otherwise
      */
     private boolean isSliderLoaded() {
-        boolean check = Js.asPropertyMap(JsUtils.global()).has("Slider");
+        boolean check = Js.asPropertyMap(Js.global()).has("Slider");
         DomGlobal.console.log("isSliderLoaded " + check);
         return check;
     }

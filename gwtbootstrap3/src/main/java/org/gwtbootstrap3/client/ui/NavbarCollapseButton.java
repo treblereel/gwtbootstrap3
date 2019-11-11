@@ -45,19 +45,19 @@ import org.gwtproject.user.client.ui.Widget;
  */
 public class NavbarCollapseButton extends Composite implements HasDataTarget, HasResponsiveness, HasPull {
 
-    private final PullMixin<NavbarCollapseButton> pullMixin = new PullMixin<NavbarCollapseButton>(this);
+    private final PullMixin<NavbarCollapseButton> pullMixin = new PullMixin<>(this);
     private final Button button;
 
     public NavbarCollapseButton() {
         button = new Button();
+        initWidget(button);
+
         button.setStyleName(Styles.NAVBAR_TOGGLE);
         button.setDataToggle(Toggle.COLLAPSE);
 
         button.add(newBarIcon());
         button.add(newBarIcon());
         button.add(newBarIcon());
-
-        initWidget(button);
     }
 
     @Override

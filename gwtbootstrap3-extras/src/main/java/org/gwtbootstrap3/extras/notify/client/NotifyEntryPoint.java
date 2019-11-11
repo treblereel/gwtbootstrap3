@@ -20,7 +20,7 @@ package org.gwtbootstrap3.extras.notify.client;
  * #L%
  */
 
-import org.gwtbootstrap3.extras.JsUtils;
+import jsinterop.base.Js;
 import org.gwtproject.core.client.EntryPoint;
 import org.gwtproject.core.client.ScriptInjector;
 import org.gwtproject.dom.client.StyleInjector;
@@ -40,6 +40,6 @@ public class NotifyEntryPoint implements EntryPoint {
      * @return <code>true</code> if notify is loaded, <code>false</code> otherwise
      */
     private boolean isNotifyLoaded() {
-        return JsUtils.global().has("jQuery.notify");
+        return Js.global().has("jQuery.notify");
     }
 }

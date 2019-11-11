@@ -12,7 +12,6 @@ import org.gwtproject.dom.client.Element;
 import org.gwtproject.dom.client.FormElement;
 import org.gwtproject.event.dom.client.KeyCodes;
 import org.gwtproject.event.dom.client.KeyPressEvent;
-import org.gwtproject.event.dom.client.KeyPressHandler;
 import org.gwtproject.event.legacy.shared.EventHandler;
 import org.gwtproject.event.legacy.shared.GwtEvent;
 import org.gwtproject.event.shared.HandlerRegistration;
@@ -509,7 +508,7 @@ public abstract class AbstractForm extends FormElementContainer implements FormP
      * @return the children with validators
      */
     protected List<HasValidators<?>> getChildrenWithValidators(Widget widget) {
-        List<HasValidators<?>> result = new ArrayList<HasValidators<?>>();
+        List<HasValidators<?>> result = new ArrayList<>();
         if (widget != null) {
             if (widget instanceof HasValidators<?>) {
                 result.add((HasValidators<?>) widget);

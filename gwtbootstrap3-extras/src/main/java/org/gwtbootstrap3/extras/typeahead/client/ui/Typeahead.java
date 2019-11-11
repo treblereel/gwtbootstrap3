@@ -3,7 +3,6 @@ package org.gwtbootstrap3.extras.typeahead.client.ui;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 
 import jsinterop.annotations.JsFunction;
 import jsinterop.annotations.JsOverlay;
@@ -68,8 +67,7 @@ public class Typeahead<T> extends TextBox {
     private int minLength = 1;
 
     public Typeahead() {
-        List<T> empty = Collections.emptyList();
-        setDatasets(new CollectionDataset<>(empty));
+        this(new CollectionDataset<>(Collections.emptyList()));
     }
 
     /**
@@ -84,15 +82,19 @@ public class Typeahead<T> extends TextBox {
 
     public Typeahead(final Collection<? extends Dataset<T>> datasets) {
         setDatasets(datasets);
+
     }
 
     public Typeahead(final Element e, final Dataset<T> dataset) {
         super(e);
+        setElement(e);
         setDatasets(dataset);
+
     }
 
     public Typeahead(final Element e, final Collection<? extends Dataset<T>> datasets) {
         super(e);
+        setElement(e);
         setDatasets(datasets);
     }
 
@@ -262,6 +264,7 @@ public class Typeahead<T> extends TextBox {
 
     private void configure(
             Element e, boolean highlight, boolean hint, int minLength, JsArray<JavaScriptObject> datasets) {
+
         JsPropertyMap templates = JsPropertyMap.of();
         templates.set("highlight", highlight);
         templates.set("hint", hint);
@@ -299,6 +302,8 @@ public class Typeahead<T> extends TextBox {
 
         public native TypeaHead typeahead(Object val, Object value);
 
+        public native void bind(String s, FnOnSelect fnOnSelect);
+
         public native TypeaHead on(String var1, Object arg);
 
         @FunctionalInterface
@@ -313,6 +318,13 @@ public class Typeahead<T> extends TextBox {
         interface FnEvent {
 
             void onInvoke(Event event);
+        }
+
+        @FunctionalInterface
+        @JsFunction
+        private interface FnOnSelect {
+
+            void onInvoke(Object event, String suggestion);
         }
 
         @FunctionalInterface

@@ -22,7 +22,7 @@ package org.gwtbootstrap3.client;
 
 import elemental2.dom.DomGlobal;
 import elemental2.dom.HTMLLinkElement;
-import org.gwtbootstrap3.client.shared.js.JsUtils;
+import jsinterop.base.Js;
 import org.gwtproject.core.client.EntryPoint;
 import org.gwtproject.core.client.ScriptInjector;
 import org.gwtproject.dom.client.StyleInjector;
@@ -63,6 +63,6 @@ public class GwtBootstrap3EntryPoint implements EntryPoint {
     }
 
     private boolean isjQueryLoaded() {
-        return JsUtils.global().has("jQuery");
+        return Js.global().has("jQuery");
     }
 }
